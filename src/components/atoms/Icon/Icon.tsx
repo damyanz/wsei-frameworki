@@ -4,8 +4,18 @@ import {
   OfficeBuildingIcon,
   HomeIcon,
   ChevronDownIcon,
+  ShieldCheckIcon,
+  PencilAltIcon,
+  ColorSwatchIcon,
 } from "@heroicons/react/solid";
-import { UserAddIcon, PlusIcon, GlobeAltIcon } from "@heroicons/react/outline";
+import {
+  UserAddIcon,
+  PlusIcon,
+  GlobeAltIcon,
+  LockClosedIcon,
+  CogIcon,
+  LogoutIcon,
+} from "@heroicons/react/outline";
 import { SVGProps } from "react";
 
 type IconsType = {
@@ -18,12 +28,18 @@ const solidIcons: IconsType = {
   home: HomeIcon,
   "office-building": OfficeBuildingIcon,
   "chevron-down": ChevronDownIcon,
+  shield: ShieldCheckIcon,
+  pencil: PencilAltIcon,
+  "color-swatch": ColorSwatchIcon,
 };
 
 const outlinedIcons: IconsType = {
   "user-add": UserAddIcon,
   plus: PlusIcon,
   "globe-alt": GlobeAltIcon,
+  lock: LockClosedIcon,
+  gear: CogIcon,
+  logout: LogoutIcon,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {

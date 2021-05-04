@@ -6,9 +6,34 @@ import { useAppSelector } from "../../../redux/hooks";
 import IconLabel from "../../atoms/IconLabel";
 import OutlinedButton from "../../atoms/OutlinedButton";
 
-const ProfileCard = () => {
+type ProfileCardProps = {
+  type?: "small";
+};
+
+export const ProfileCard = ({ type }: ProfileCardProps) => {
   const userData = useAppSelector((state) => state.user);
   const { firstName, lastName, picture } = userData || {};
+
+  if (type === "small") {
+    return (
+      <div className="flex items-center">
+        {picture ? (
+          <img src={picture} alt="" className="rounded-full w-7 h-7" />
+        ) : (
+          <div className="w-8 h-8 bg-gray-500 rounded-full" />
+        )}
+        <div className="flex flex-col w-full pr-3 ml-3">
+          <label
+            className="w-2/3 text-sm truncate"
+            title={`${firstName} ${lastName}`}
+          >
+            {firstName} {lastName}
+          </label>
+          <label className="text-xs text-blue-700">See profile</label>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="flex flex-col w-full bg-white rounded shadow">
@@ -16,7 +41,7 @@ const ProfileCard = () => {
         {picture ? (
           <img src={picture} alt="" className="w-16 h-16 rounded-full" />
         ) : (
-          <div className="w-16 h-16 bg-blue-800 rounded-full" />
+          <div className="w-16 h-16 bg-gray-500 rounded-full" />
         )}
         {(firstName || lastName) && (
           <span className="my-1 font-semibold text-blue-800">

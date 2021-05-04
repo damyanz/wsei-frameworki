@@ -3,20 +3,20 @@ import useOutsideClick from "../../../hooks/useOutsideClick";
 import clsx from "clsx";
 import IconLabel from "../../atoms/IconLabel";
 import Icon from "../../atoms/Icon";
+import DropdownMenu from "../DropdownMenu";
 
 const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const { ref } = useOutsideClick<HTMLDivElement>(() => {
     if (isOpen) setIsOpen(false);
   });
 
   return (
-    <div className={clsx("relative w-52 bg-red-400")}>
+    <div className={clsx("relative w-52")}>
       <div
         className="flex items-center justify-between "
         onClick={() => {
           setIsOpen(true);
-          console.log(isOpen);
         }}
       >
         <IconLabel label="Home" iconName="home" iconClassName="w-6 h-6 mr-3" />{" "}
@@ -28,8 +28,11 @@ const Dropdown = () => {
         />
       </div>
       {isOpen && (
-        <div ref={ref} className="absolute w-full bg-red-500 top-full h-96">
-          siema
+        <div
+          ref={ref}
+          className="absolute z-10 w-64 bg-white border-t rounded-b-sm rounded-tr-sm shadow-xl border-gray-light top-full"
+        >
+          <DropdownMenu />
         </div>
       )}
     </div>
