@@ -6,7 +6,7 @@ import Icon from "../../atoms/Icon";
 import DropdownMenu from "../DropdownMenu";
 
 const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { ref } = useOutsideClick<HTMLDivElement>(() => {
     if (isOpen) setIsOpen(false);
   });
@@ -30,7 +30,7 @@ const Dropdown = () => {
       {isOpen && (
         <div
           ref={ref}
-          className="absolute z-10 w-64 bg-white border-t rounded-b-sm rounded-tr-sm shadow-xl border-gray-light top-full"
+          className="absolute z-40 w-64 bg-white border-t rounded-b-sm rounded-tr-sm shadow-xl border-gray-light top-full"
         >
           <DropdownMenu />
         </div>

@@ -15,6 +15,8 @@ import {
   LockClosedIcon,
   CogIcon,
   LogoutIcon,
+  PencilAltIcon as PencilAltIconOutlined,
+  UsersIcon as UsersIconOutlined,
 } from "@heroicons/react/outline";
 import { SVGProps } from "react";
 
@@ -40,6 +42,8 @@ const outlinedIcons: IconsType = {
   lock: LockClosedIcon,
   gear: CogIcon,
   logout: LogoutIcon,
+  pencil: PencilAltIconOutlined,
+  network: UsersIconOutlined,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {
