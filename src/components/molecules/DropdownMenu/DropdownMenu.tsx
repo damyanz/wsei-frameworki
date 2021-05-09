@@ -1,100 +1,78 @@
 import { useState } from "react";
 import Input from "../../atoms/Input";
 import IconLabel from "../../atoms/IconLabel";
+import { filterByText } from "../../../helpers/common";
 import { ProfileCard } from "../Sidebar/Sidebar";
 import clsx from "clsx";
+import { workspaces, platform } from "../../../constants";
 
 const DropdownMenu = () => {
   const [searchPhrase, setSearchPhrase] = useState<string>("");
+  const [filteredItems, setFilteredItems] = useState<any[]>([]);
 
   const menuGroups = [
     {
       title: "Platform",
-      items: [
-        {
-          label: "Home",
-          icon: "home",
-          iconClassName: "text-blue-icon",
-        },
-        {
-          label: "Publications",
-          icon: "publications",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "People",
-          icon: "network",
-          iconClassName: "text-blue-icon",
-        },
-        {
-          label: "Entities",
-          icon: "office-building",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "Administration",
-          icon: "shield",
-          iconClassName: "text-blue-icon",
-        },
-      ],
+      items: platform.map((platform) => ({
+        ...platform,
+        iconClassName: "text-blue-icon",
+      })),
     },
     {
       title: "Workspaces",
-      items: [
-        {
-          label: "Client contract",
-          icon: "pencil",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "Supplier contract",
-          icon: "pencil",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "Corporate",
-          icon: "office-building",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "Group Norms",
-          icon: "color-swatch",
-          iconClassName: "text-gray-icon",
-        },
-        {
-          label: "Real estate contracts",
-          icon: "pencil",
-          iconClassName: "text-gray-icon",
-        },
-      ],
+      items: workspaces.map((workspace) => ({
+        ...workspace,
+        iconClassName: "text-gray-icon",
+      })),
     },
   ];
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSearchPhrase(e.currentTarget.value);
+    const foundItems = filterByText(
+      e.currentTarget.value,
+      menuGroups.flatMap(({ items }) => items),
+      "label"
+    );
+    setFilteredItems(foundItems);
+  };
 
   return (
     <div className="flex flex-col flex-1 pl-3 pt-1.5">
       <Input
         placeholder="Filter..."
-        onChange={(e) => setSearchPhrase(e.currentTarget.value)}
-        className="flex flex-1 px-2 py-1.5 mr-3 text-sm border rounded border-gray-light"
+        onChange={handleInput}
+        className="flex flex-1 px-2 py-1.5 text-sm border rounded border-gray-light"
+        wrapperClassName="mr-3"
       />
       <div className="flex flex-1 overflow-y-scroll border-b border-gray-light">
         <div className="w-full">
-          {menuGroups.map(({ title, items }) => (
-            <div key={`menuGroup-${title}`} className="flex flex-col mt-1">
-              <label className="text-xs font-semibold text-gray-400">
-                {title}
-              </label>
-              {items.map(({ label, iconClassName, icon }) => (
-                <IconLabel
-                  label={label}
-                  iconName={icon}
-                  className="py-1"
-                  iconClassName={clsx("w-6 h-6 mr-4", iconClassName)}
-                  labelClassName="text-base"
-                />
-              ))}
-            </div>
-          ))}
+          {menuGroups.map(({ title, items: _items }) => {
+            const items =
+              searchPhrase.length > 0
+                ? _items.filter((item) =>
+                    filteredItems.map(({ label }) => label).includes(item.label)
+                  )
+                : _items;
+
+            if (items.length === 0) return null;
+            return (
+              <div key={`menuGroup-${title}`} className="flex flex-col mt-1">
+                <label className="text-xs font-semibold text-gray-400">
+                  {title}
+                </label>
+                {items.map(({ label, iconClassName, icon }) => (
+                  <IconLabel
+                    label={label}
+                    iconName={icon}
+                    className="py-1"
+                    iconClassName={clsx("w-6 h-6 mr-4", iconClassName)}
+                    labelClassName="text-base"
+                  />
+                ))}
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="flex flex-col pb-1 pt-1.5 border-b border-gray-light">

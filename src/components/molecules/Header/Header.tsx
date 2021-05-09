@@ -3,6 +3,7 @@ import { HomeIcon, BellIcon, ChatAlt2Icon } from "@heroicons/react/solid";
 import SearchBar from "../../atoms/SearchBar";
 import clsx from "clsx";
 import Dropdown from "../Dropdown";
+import Input from "../../atoms/Input";
 
 const Header = () => {
   return (
@@ -12,7 +13,14 @@ const Header = () => {
           <img src="/logo.png" alt="Company" className="h-8" />
           <Dropdown />
         </div>
-        <SearchBar />
+        <Input
+          onChange={() => null}
+          placeholder="Search Legalcluster"
+          className="flex flex-1 px-2 py-1.5 text-sm border rounded border-gray-light"
+          icon="search"
+          iconClassName="h-5 text-blue-icon transform -translate-y-1/2 right-1.5 top-1/2"
+          wrapperClassName="flex flex-1 max-w-lg"
+        />
         <Cockpit />
       </div>
     </header>

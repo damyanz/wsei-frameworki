@@ -1,9 +1,13 @@
 import clsx from "clsx";
+import Icon from "../../atoms/Icon";
 
 type InputType = {
   type?: string;
   placeholder?: string;
   className?: string;
+  icon?: "search";
+  iconClassName?: string;
+  wrapperClassName?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
@@ -12,14 +16,20 @@ const Input = ({
   placeholder,
   onChange,
   className,
+  icon,
+  iconClassName,
+  wrapperClassName,
 }: InputType) => {
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      onChange={onChange}
-      className={clsx("", className)}
-    />
+    <div className={clsx("relative", wrapperClassName)}>
+      <input
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        className={clsx("w-full", className)}
+      />
+      {icon && <Icon name={icon} className={clsx("absolute", iconClassName)} />}
+    </div>
   );
 };
 

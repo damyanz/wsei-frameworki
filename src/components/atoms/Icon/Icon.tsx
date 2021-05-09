@@ -7,6 +7,7 @@ import {
   ShieldCheckIcon,
   PencilAltIcon,
   ColorSwatchIcon,
+  SearchIcon,
 } from "@heroicons/react/solid";
 import {
   UserAddIcon,
@@ -17,6 +18,8 @@ import {
   LogoutIcon,
   PencilAltIcon as PencilAltIconOutlined,
   UsersIcon as UsersIconOutlined,
+  ColorSwatchIcon as ColorSwatchIconOutlined,
+  OfficeBuildingIcon as OfficeBuildingIconOutlined,
 } from "@heroicons/react/outline";
 import { SVGProps } from "react";
 
@@ -33,6 +36,7 @@ const solidIcons: IconsType = {
   shield: ShieldCheckIcon,
   pencil: PencilAltIcon,
   "color-swatch": ColorSwatchIcon,
+  search: SearchIcon,
 };
 
 const outlinedIcons: IconsType = {
@@ -44,6 +48,8 @@ const outlinedIcons: IconsType = {
   logout: LogoutIcon,
   pencil: PencilAltIconOutlined,
   network: UsersIconOutlined,
+  "color-swatch": ColorSwatchIconOutlined,
+  "office-building": OfficeBuildingIconOutlined,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {

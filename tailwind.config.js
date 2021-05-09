@@ -18,6 +18,9 @@ module.exports = {
           badge: "#0381BE",
         },
       },
+      maxWidth: {
+        "1/2": "50%",
+      },
       fontSize: {
         10: "0.6rem",
         12: "0.74rem",
@@ -31,7 +34,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      scale: ["group-hover"],
+    },
   },
   plugins: [],
 };

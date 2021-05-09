@@ -4,14 +4,14 @@ import Sidebar from "./components/molecules/Sidebar";
 import Dropdown from "./components/molecules/Dropdown";
 import Home from "./components/organisms/Home";
 import { store } from "./redux/store";
+import { initDayJs } from "./helpers/initializers";
 
 function App() {
+  initDayJs();
+
   return (
     <Provider store={store}>
-      <div
-        className="flex flex-col items-center min-h-screen pt-16 bg-gray-bg"
-        style={{ height: "200vh" }}
-      >
+      <div className="flex flex-col items-center min-h-screen pt-16 bg-gray-bg">
         <Header />
         <div className="flex w-full max-w-screen-xl min-h-full">
           <Sidebar />

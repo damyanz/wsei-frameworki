@@ -8,6 +8,7 @@ type IconLabelProps = {
   className?: string;
   iconClassName?: string;
   labelClassName?: string;
+  title?: string;
 };
 
 const IconLabel = ({
@@ -17,9 +18,10 @@ const IconLabel = ({
   iconClassName,
   className,
   labelClassName,
+  title,
 }: IconLabelProps) => {
   return (
-    <div className={clsx("flex items-center", className)}>
+    <div title={title} className={clsx("flex items-center", className)}>
       <Icon name={iconName} className={iconClassName} type={iconType} />
       <span className={labelClassName}>{label}</span>
     </div>
