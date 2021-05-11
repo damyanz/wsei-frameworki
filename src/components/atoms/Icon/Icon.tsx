@@ -8,6 +8,8 @@ import {
   PencilAltIcon,
   ColorSwatchIcon,
   SearchIcon,
+  CubeTransparentIcon,
+  CalendarIcon,
 } from "@heroicons/react/solid";
 import {
   UserAddIcon,
@@ -37,6 +39,8 @@ const solidIcons: IconsType = {
   pencil: PencilAltIcon,
   "color-swatch": ColorSwatchIcon,
   search: SearchIcon,
+  cube: CubeTransparentIcon,
+  calendar: CalendarIcon,
 };
 
 const outlinedIcons: IconsType = {

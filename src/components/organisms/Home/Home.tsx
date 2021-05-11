@@ -91,11 +91,11 @@ const LatestPublications = ({
   );
 };
 
-const WorkspaceCard = ({ workspace }) => {
+const WorkspaceCard = ({ workspace }: any) => {
   const [pictureLoaded, setPictureLoaded] = useState<boolean>(false);
   const { icon, label, picture } = workspace;
   return (
-    <div className="flex flex-col flex-shrink-0 overflow-hidden transition duration-300 transform bg-white rounded shadow cursor-pointer hover:shadow-md group hover:-translate-y-1 w-60">
+    <div className="flex flex-col flex-shrink-0 overflow-hidden transition duration-300 transform bg-white rounded shadow cursor-pointer hover:shadow-md hover:-translate-y-1 w-60">
       <div className="relative h-20 overflow-hidden">
         {!pictureLoaded && (
           <div className="absolute w-full h-full bg-gray-300 animate-pulse"></div>
@@ -105,7 +105,7 @@ const WorkspaceCard = ({ workspace }) => {
             src={picture}
             alt={label}
             onLoad={() => setPictureLoaded(true)}
-            className="object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-110"
+            className="object-cover w-full h-full"
           />
         )}
       </div>
@@ -159,9 +159,6 @@ const Workspaces = () => {
 
 const Home = () => {
   const [publications, setPublications] = useState<any>(null);
-  const [workspaces, setWorkspaces] = useState<any>(null);
-
-  console.log(publications);
 
   useEffect(() => {
     const getPosts = async () => {

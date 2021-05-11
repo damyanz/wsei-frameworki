@@ -12,6 +12,7 @@ module.exports = {
           "icon-light": "#CCCCCC",
           icon: "#878B91",
           bg: "#F5F7F9",
+          section: "#F3F3F3",
         },
         blue: {
           icon: "#232C47",

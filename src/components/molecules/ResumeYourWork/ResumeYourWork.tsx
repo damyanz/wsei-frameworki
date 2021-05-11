@@ -64,7 +64,7 @@ const ResumeItem = ({ title, user, updatedAt }: ResumeItemType) => {
   const workspace = getRandomArrayItem(workspaces);
   const updateTime = dayjs(updatedAt).fromNow();
   return (
-    <div className="flex flex-col flex-shrink-0 bg-white rounded shadow  px-4 pt-2.5 pb-2">
+    <div className="flex cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition duration-300 transform flex-col flex-shrink-0 bg-white rounded shadow  px-4 pt-2.5 pb-2">
       <h2 className="mb-1 font-semibold text-blue-800 text-md">{title}</h2>
       <p className="mb-2 text-sm text-gray-500">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
