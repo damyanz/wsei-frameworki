@@ -20,7 +20,7 @@ function App() {
           <div className="flex w-full max-w-screen-xl min-h-full">
             <Sidebar />
             <Switch>
-              <Route path="/workspace/:workspaceId">
+              <Route path="/workspace/:slug">
                 <Workspace />
               </Route>
               <Route path="/me">

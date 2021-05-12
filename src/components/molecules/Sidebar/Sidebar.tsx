@@ -77,12 +77,14 @@ const Sidebar = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const res = await fetch(`https://dummyapi.io/data/api/user?limit=1`, {
-          headers: { "app-id": APP_ID },
-        });
-        const {
-          data: [user],
-        } = await res.json();
+        const res = await fetch(
+          `https://dummyapi.io/data/api/user/uABrZcuHGJnanoxlt53c`,
+          {
+            headers: { "app-id": APP_ID },
+          }
+        );
+
+        const user = await res.json();
         dispatch(setUserData(user));
         return user;
       } catch (err) {

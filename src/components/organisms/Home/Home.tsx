@@ -6,6 +6,7 @@ import IconLabel from "../../atoms/IconLabel";
 import ResumeYourWork from "../../molecules/ResumeYourWork";
 import PersonLabel from "../../atoms/PersonLabel";
 import { workspaces } from "../../../constants";
+import { Link } from "react-router-dom";
 
 type LatestPublicationsType = {
   publications: any;
@@ -150,7 +151,9 @@ const Workspaces = () => {
       <h2 className="pl-4 text-xl font-semibold">Workspaces</h2>
       <div className=" flex space-x-1.5 py-4 overflow-x-scroll scrollbar-hidden">
         {workspaces.map((workspace) => (
-          <WorkspaceCard workspace={workspace} />
+          <Link to={`/workspace/${workspace.slug}`}>
+            <WorkspaceCard workspace={workspace} />
+          </Link>
         ))}
       </div>
     </section>
@@ -165,6 +168,7 @@ const Home = () => {
       try {
         const res = await fetch(`https://dummyapi.io/data/api/post`, {
           headers: { "app-id": APP_ID },
+          cache: "force-cache",
         });
         const { data } = await res.json();
         setPublications(data);
@@ -176,7 +180,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-start justify-start w-4/5 pl-10">
+    <main className="flex flex-col items-start justify-start w-4/5 pb-12 pl-10">
       {publications ? (
         <LatestPublications publications={publications || []} />
       ) : (

@@ -18,6 +18,9 @@ import {
   LockClosedIcon,
   CogIcon,
   LogoutIcon,
+  UserIcon,
+  DocumentTextIcon,
+  CheckIcon,
   PencilAltIcon as PencilAltIconOutlined,
   UsersIcon as UsersIconOutlined,
   ColorSwatchIcon as ColorSwatchIconOutlined,
@@ -54,6 +57,9 @@ const outlinedIcons: IconsType = {
   network: UsersIconOutlined,
   "color-swatch": ColorSwatchIconOutlined,
   "office-building": OfficeBuildingIconOutlined,
+  user: UserIcon,
+  document: DocumentTextIcon,
+  check: CheckIcon,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {
