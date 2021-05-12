@@ -2,7 +2,11 @@ const PersonLabel = ({ person, labelClassName }: any) => {
   return (
     <div className="flex space-x-1.5 items-center">
       {person.picture ? (
-        <img src={person.picture} className="w-4 h-4 rounded-full" />
+        <img
+          alt={`${person.firstName} ${person.lastName}`}
+          src={person.picture}
+          className="w-4 h-4 rounded-full"
+        />
       ) : (
         <div className="w-4 h-4 bg-blue-400 rounded-full"></div>
       )}

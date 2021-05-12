@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { APP_ID } from "../../../env";
 import Icon from "../../atoms/Icon";
@@ -16,7 +15,11 @@ const PublicationThumb = ({ publication }: any) => {
   return (
     <div className="flex items-center space-x-2">
       <div className="group" style={{ width: 68, height: 68 }}>
-        <img className="object-cover w-full h-full" src={publication.image} />
+        <img
+          alt={publication.title}
+          className="object-cover w-full h-full"
+          src={publication.image}
+        />
       </div>
       <div className="flex flex-col flex-1 space-y-2">
         <p className="font-semibold text-blue-icon">{publication.text}</p>
@@ -55,6 +58,7 @@ const LatestPublications = ({
       <div className="relative flex w-1/3 pl-3 pb-7">
         <img
           src={latestPublication.image}
+          alt="Latest publication"
           className="absolute top-0 left-0 object-cover w-full h-full"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-600"></div>

@@ -1,13 +1,12 @@
 import { Provider } from "react-redux";
 import Header from "./components/molecules/Header";
 import Sidebar from "./components/molecules/Sidebar";
-import Dropdown from "./components/molecules/Dropdown";
 import Home from "./components/organisms/Home";
 import Workspace from "./components/organisms/Workspace";
 import Profile from "./components/organisms/Profile";
 import { store } from "./redux/store";
 import { initDayJs } from "./helpers/initializers";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   initDayJs();

@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { HomeIcon, BellIcon, ChatAlt2Icon } from "@heroicons/react/solid";
-import SearchBar from "../../atoms/SearchBar";
 import clsx from "clsx";
 import Dropdown from "../Dropdown";
 import Input from "../../atoms/Input";

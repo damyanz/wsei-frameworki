@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import useOutsideClick from "../../../hooks/useOutsideClick";
 import clsx from "clsx";
 import IconLabel from "../../atoms/IconLabel";
