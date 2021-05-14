@@ -12,10 +12,12 @@ import Filter from "../../atoms/Filter";
 type ResumeYourWorkType = {
   publications: any[];
   withFilters?: boolean;
+  label?: string;
 };
 
 const ResumeYourWork = ({
   publications: _publications,
+  label,
   withFilters,
 }: ResumeYourWorkType) => {
   const userData = useAppSelector((state) => state.user);
@@ -65,11 +67,10 @@ const ResumeYourWork = ({
     }
   };
 
-  console.log(publications);
   return (
     <section className="pt-2.5 w-full">
       <div className="flex justify-between w-full">
-        <h2 className="pl-4 text-xl font-semibold">Resume your work</h2>
+        <h2 className="pl-4 text-xl font-semibold">{label}</h2>
         <div className="flex items-center mb-2.5 space-x-8">
           <Input
             onChange={handleInput}

@@ -5,6 +5,7 @@ import { filterByText } from "../../../helpers/common";
 import { ProfileCard } from "../Sidebar/Sidebar";
 import clsx from "clsx";
 import { workspaces, platform } from "../../../constants";
+import { Link } from "react-router-dom";
 
 const DropdownMenu = () => {
   const [searchPhrase, setSearchPhrase] = useState<string>("");
@@ -61,14 +62,16 @@ const DropdownMenu = () => {
                 <label className="text-xs font-semibold text-gray-400">
                   {title}
                 </label>
-                {items.map(({ label, iconClassName, icon }) => (
-                  <IconLabel
-                    label={label}
-                    iconName={icon}
-                    className="py-1"
-                    iconClassName={clsx("w-6 h-6 mr-4", iconClassName)}
-                    labelClassName="text-base"
-                  />
+                {items.map(({ label, iconClassName, icon, slug }) => (
+                  <Link to={`/workspace/${slug}`}>
+                    <IconLabel
+                      label={label}
+                      iconName={icon}
+                      className="py-1"
+                      iconClassName={clsx("w-6 h-6 mr-4", iconClassName)}
+                      labelClassName="text-base"
+                    />
+                  </Link>
                 ))}
               </div>
             );

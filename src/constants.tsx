@@ -40,22 +40,27 @@ export const platform = [
   {
     label: "Home",
     icon: "home",
+    slug: "",
   },
   {
     label: "Publications",
     icon: "publications",
+    slug: "",
   },
   {
     label: "People",
     icon: "network",
+    slug: "",
   },
   {
     label: "Entities",
     icon: "office-building",
+    slug: "",
   },
   {
     label: "Administration",
     icon: "shield",
+    slug: "",
   },
 ];
 

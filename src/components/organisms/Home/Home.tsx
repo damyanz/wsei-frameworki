@@ -191,7 +191,10 @@ const Home = () => {
         "loader"
       )}
       <Workspaces />
-      <ResumeYourWork publications={publications || []} />
+      <ResumeYourWork
+        label="Resume your work"
+        publications={publications || []}
+      />
     </main>
   );
 };
