@@ -5,6 +5,7 @@ import { setUserData } from "../../..//redux/slices/userSlice";
 import { useAppSelector } from "../../../redux/hooks";
 import IconLabel from "../../atoms/IconLabel";
 import OutlinedButton from "../../atoms/OutlinedButton";
+import { Link } from "react-router-dom";
 
 type ProfileCardProps = {
   type?: "small";
@@ -110,11 +111,13 @@ const Sidebar = () => {
           iconType="outlined"
           iconClassName="text-gray-icon-light w-7 h-7 mr-4"
         />
-        <IconLabel
-          label="Entities"
-          iconName="office-building"
-          iconClassName="text-gray-icon-light w-7 h-7 mr-4"
-        />
+        <Link to="/entities">
+          <IconLabel
+            label="Entities"
+            iconName="office-building"
+            iconClassName="text-gray-icon-light w-7 h-7 mr-4"
+          />
+        </Link>
       </div>
     </aside>
   );

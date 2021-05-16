@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       sans: ["Open Sans"],
     },
+
     extend: {
       colors: {
         gray: {
@@ -37,6 +38,8 @@ module.exports = {
   variants: {
     extend: {
       scale: ["group-hover"],
+      translate: ["group-hover"],
+      cursor: ["hover"],
     },
   },
   plugins: [],

@@ -10,6 +10,8 @@ import {
   SearchIcon,
   CubeTransparentIcon,
   CalendarIcon,
+  ViewGridIcon,
+  ViewListIcon,
 } from "@heroicons/react/solid";
 import {
   UserAddIcon,
@@ -44,6 +46,8 @@ const solidIcons: IconsType = {
   search: SearchIcon,
   cube: CubeTransparentIcon,
   calendar: CalendarIcon,
+  mosaic: ViewGridIcon,
+  list: ViewListIcon,
 };
 
 const outlinedIcons: IconsType = {

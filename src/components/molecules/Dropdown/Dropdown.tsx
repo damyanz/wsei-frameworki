@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import useOutsideClick from "../../../hooks/useOutsideClick";
 import clsx from "clsx";
 import IconLabel from "../../atoms/IconLabel";
 import Icon from "../../atoms/Icon";
 import DropdownMenu from "../DropdownMenu";
+import { useLocation } from "react-router-dom";
+
+interface LocationState {
+  pathname: string;
+}
 
 const Dropdown = () => {
+  const { pathname } = useLocation<LocationState>();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { ref } = useOutsideClick<HTMLDivElement>(() => {
     if (isOpen) setIsOpen(false);
   });
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
     <div className={clsx("relative w-52")}>
       <div
-        className="flex items-center justify-between "
+        className="flex items-center justify-between cursor-pointer"
         onClick={() => {
           setIsOpen(true);
         }}

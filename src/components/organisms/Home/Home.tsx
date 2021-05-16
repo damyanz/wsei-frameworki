@@ -13,15 +13,16 @@ type LatestPublicationsType = {
 
 const PublicationThumb = ({ publication }: any) => {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="group" style={{ width: 68, height: 68 }}>
+    <div className="relative flex items-center group hover:cursor-pointer">
+      <div className="box-content absolute w-full h-full p-1 transition-opacity duration-100 transform -translate-x-1 rounded opacity-0 bg-gray-section group-hover:opacity-100"></div>
+      <div className="z-10 mr-2" style={{ width: 68, height: 68 }}>
         <img
           alt={publication.title}
           className="object-cover w-full h-full"
           src={publication.image}
         />
       </div>
-      <div className="flex flex-col flex-1 space-y-2">
+      <div className="z-10 flex flex-col flex-1 space-y-2">
         <p className="font-semibold text-blue-icon">{publication.text}</p>
         <div className="flex items-center space-x-2">
           <time className="text-sm text-gray-400">
@@ -55,14 +56,14 @@ const LatestPublications = ({
 
   return (
     <div className="flex w-full space-x-5 overflow-hidden bg-white rounded shadow">
-      <div className="relative flex w-1/3 pl-3 pb-7">
+      <div className="relative flex w-1/3 pl-3 overflow-hidden pb-7 group hover:cursor-pointer">
         <img
           src={latestPublication.image}
           alt="Latest publication"
-          className="absolute top-0 left-0 object-cover w-full h-full"
+          className="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform group-hover:scale-110"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-gray-600"></div>
-        <div className="relative z-20 flex flex-col justify-end space-y-2">
+        <div className="relative z-20 flex flex-col justify-end space-y-2 transition-transform duration-200 origin-bottom-left transform group-hover:scale-110">
           <p className="font-semibold text-white">{latestPublication.text}</p>
           <div className="flex items-center space-x-2">
             <time className="text-sm text-white opacity-75">
@@ -123,7 +124,7 @@ const WorkspaceCard = ({ workspace }: any) => {
             {label}
           </h3>
         </div>
-        <div className="flex flex-grow-0 max-w-full mt-4 space-x-2 overflow-hidden">
+        <div className="flex flex-grow-0 max-w-full mt-4 space-x-2 overflow-hidden overflow-ellipsis">
           <IconLabel
             label={label}
             iconName={icon}

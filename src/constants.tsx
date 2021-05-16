@@ -55,7 +55,7 @@ export const platform = [
   {
     label: "Entities",
     icon: "office-building",
-    slug: "",
+    slug: "entities",
   },
   {
     label: "Administration",

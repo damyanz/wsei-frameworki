@@ -14,6 +14,7 @@ const DropdownMenu = () => {
   const menuGroups = [
     {
       title: "Platform",
+      type: "platform",
       items: platform.map((platform) => ({
         ...platform,
         iconClassName: "text-blue-icon",
@@ -21,6 +22,7 @@ const DropdownMenu = () => {
     },
     {
       title: "Workspaces",
+      type: "workspaces",
       items: workspaces.map((workspace) => ({
         ...workspace,
         iconClassName: "text-gray-icon",
@@ -48,14 +50,17 @@ const DropdownMenu = () => {
       />
       <div className="flex flex-1 overflow-y-scroll border-b border-gray-light">
         <div className="w-full">
-          {menuGroups.map(({ title, items: _items }) => {
+          {menuGroups.map(({ title, type, items: _items }) => {
             const items =
               searchPhrase.length > 0
                 ? _items.filter((item) =>
                     filteredItems.map(({ label }) => label).includes(item.label)
                   )
                 : _items;
-
+            const basePaths: any = {
+              platform: "",
+              workspaces: "/workspace",
+            };
             if (items.length === 0) return null;
             return (
               <div key={`menuGroup-${title}`} className="flex flex-col mt-1">
@@ -63,7 +68,7 @@ const DropdownMenu = () => {
                   {title}
                 </label>
                 {items.map(({ label, iconClassName, icon, slug }) => (
-                  <Link to={`/workspace/${slug}`}>
+                  <Link to={`${basePaths[type]}/${slug}`}>
                     <IconLabel
                       label={label}
                       iconName={icon}
