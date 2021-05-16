@@ -9,6 +9,7 @@ type InputType = {
   iconClassName?: string;
   wrapperClassName?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
+  disabled?: boolean;
 };
 
 const Input = ({
@@ -19,6 +20,7 @@ const Input = ({
   icon,
   iconClassName,
   wrapperClassName,
+  disabled,
 }: InputType) => {
   return (
     <div className={clsx("relative", wrapperClassName)}>
@@ -27,6 +29,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={onChange}
         className={clsx("w-full", className)}
+        disabled={disabled}
       />
       {icon && <Icon name={icon} className={clsx("absolute", iconClassName)} />}
     </div>

@@ -97,27 +97,29 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="sticky left-0 flex flex-col w-1/5 top-16">
-      <ProfileCard />
-      <div className="flex flex-col pl-4 mt-5 space-y-4">
-        <IconLabel
-          label="Publications"
-          iconName="publications"
-          iconClassName="text-gray-icon-light w-7 h-7 mr-4"
-        />
-        <IconLabel
-          label="Ecosystem"
-          iconName="globe-alt"
-          iconType="outlined"
-          iconClassName="text-gray-icon-light w-7 h-7 mr-4"
-        />
-        <Link to="/entities">
+    <aside className="flex flex-col w-1/5 top-16">
+      <div className="sticky flex flex-col top-16">
+        <ProfileCard />
+        <div className="flex flex-col pl-4 mt-5 space-y-4">
           <IconLabel
-            label="Entities"
-            iconName="office-building"
+            label="Publications"
+            iconName="publications"
             iconClassName="text-gray-icon-light w-7 h-7 mr-4"
           />
-        </Link>
+          <IconLabel
+            label="Ecosystem"
+            iconName="globe-alt"
+            iconType="outlined"
+            iconClassName="text-gray-icon-light w-7 h-7 mr-4"
+          />
+          <Link to="/entities">
+            <IconLabel
+              label="Entities"
+              iconName="office-building"
+              iconClassName="text-gray-icon-light w-7 h-7 mr-4"
+            />
+          </Link>
+        </div>
       </div>
     </aside>
   );

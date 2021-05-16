@@ -12,6 +12,8 @@ import {
   CalendarIcon,
   ViewGridIcon,
   ViewListIcon,
+  ArrowDownIcon,
+  FilterIcon,
 } from "@heroicons/react/solid";
 import {
   UserAddIcon,
@@ -23,6 +25,13 @@ import {
   UserIcon,
   DocumentTextIcon,
   CheckIcon,
+  UserGroupIcon,
+  DotsHorizontalIcon,
+  SwitchVerticalIcon,
+  ArrowsExpandIcon,
+  XIcon,
+  ShareIcon,
+  FilterIcon as FilterIconOutlined,
   PencilAltIcon as PencilAltIconOutlined,
   UsersIcon as UsersIconOutlined,
   ColorSwatchIcon as ColorSwatchIconOutlined,
@@ -48,6 +57,8 @@ const solidIcons: IconsType = {
   calendar: CalendarIcon,
   mosaic: ViewGridIcon,
   list: ViewListIcon,
+  "arrow-down": ArrowDownIcon,
+  filter: FilterIcon,
 };
 
 const outlinedIcons: IconsType = {
@@ -64,6 +75,13 @@ const outlinedIcons: IconsType = {
   user: UserIcon,
   document: DocumentTextIcon,
   check: CheckIcon,
+  "user-group": UserGroupIcon,
+  "dots-horizontal": DotsHorizontalIcon,
+  "switch-vertical": SwitchVerticalIcon,
+  filter: FilterIconOutlined,
+  fullscreen: ArrowsExpandIcon,
+  x: XIcon,
+  share: ShareIcon,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {

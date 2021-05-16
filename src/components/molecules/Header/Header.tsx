@@ -5,7 +5,7 @@ import Input from "../../atoms/Input";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 z-10 flex w-screen bg-white shadow-md">
+    <header className="fixed top-0 left-0 z-20 flex w-screen bg-white shadow-md">
       <div className="relative flex items-center justify-between flex-1 max-w-screen-xl py-1 mx-auto">
         <div className="flex items-center space-x-5">
           <img src="/logo.png" alt="Company" className="h-8" />
