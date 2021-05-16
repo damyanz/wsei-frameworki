@@ -1,13 +1,13 @@
 import { useAppSelector } from "../../../redux/hooks";
 import PersonLabel from "../../atoms/PersonLabel";
 import IconLabel from "../../atoms/IconLabel";
-import { workspaces, filters } from "../../../constants";
+import { workspaces, filters, selectFilterOptions } from "../../../constants";
 import { getRandomArrayItem, filterByText } from "../../../helpers/common";
 import dayjs from "dayjs";
 import Input from "../../atoms/Input";
 import React, { useState, useMemo } from "react";
-import Icon from "../../atoms/Icon";
 import Filter from "../../atoms/Filter";
+import SelectFilter from "../../atoms/SelectFilter";
 
 type ResumeYourWorkType = {
   publications: any[];
@@ -80,21 +80,11 @@ const ResumeYourWork = ({
             iconClassName="h-5 text-blue-icon transform -translate-y-1/2 right-1.5 top-1/2"
             wrapperClassName="flex flex-1 max-w-lg"
           />
-          <div className="flex">
-            <Icon
-              name={filterValue === "my" ? "user" : "globe-alt"}
-              type="outlined"
-              className="w-6 h-6 mr-1 text-blue-800"
-            />
-            <select
-              onChange={handleSelect}
-              value={filterValue}
-              className="relative text-blue-800 bg-transparent"
-            >
-              <option value="followed">Followed</option>
-              <option value="my">My</option>
-            </select>
-          </div>
+          <SelectFilter
+            value={filterValue}
+            onChange={handleSelect}
+            options={selectFilterOptions}
+          />
         </div>
       </div>
       {withFilters && (

@@ -135,3 +135,16 @@ export const filters = [
     bgClassName: "bg-gray-100",
   },
 ];
+
+export const selectFilterOptions = [
+  {
+    value: "followed",
+    label: "Followed",
+    icon: "globe-alt",
+  },
+  {
+    value: "my",
+    label: "My",
+    icon: "user",
+  },
+];

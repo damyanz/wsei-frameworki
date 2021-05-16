@@ -10,9 +10,14 @@ const Filter = ({
   onChange,
 }: any) => {
   return (
-    <div className={clsx("p-1 px-1.5 text-sm rounded shadow-sm", bgClassName)}>
+    <div
+      className={clsx(
+        "p-1 px-1.5 text-sm rounded shadow-sm cursor-pointer",
+        bgClassName
+      )}
+    >
       <label
-        className="flex items-center justify-center opacity-40"
+        className="flex items-center justify-center cursor-pointer opacity-40"
         htmlFor={value}
       >
         {icon && (

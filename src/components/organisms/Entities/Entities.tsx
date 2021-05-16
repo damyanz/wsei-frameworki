@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
+import { useAppSelector } from "../../../redux/hooks";
 import Icon from "../../atoms/Icon";
 import Input from "../../atoms/Input";
 import ViewSwitch from "../../atoms/ViewSwitch";
+import EntityCard from "../../atoms/EntityCard";
+import SelectFilter from "../../atoms/SelectFilter";
 import { ViewType } from "../../atoms/ViewSwitch/ViewSwitch";
 import { APP_ID } from "../../../env";
 import { filterByText } from "../../../helpers/common";
+import { selectFilterOptions } from "../../../constants";
 import clsx from "clsx";
 
 const Entities = () => {
@@ -12,6 +16,10 @@ const Entities = () => {
   const [publications, setPublications] = useState<any[]>([]);
   const [searchPhrase, setSearchPhrase] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filterValue, setFilterValue] = useState<string>("followed");
+
+  const userData = useAppSelector((state) => state.user);
+  const { id: user_id } = userData || {};
 
   useEffect(() => {
     const getPosts = async () => {
@@ -39,6 +47,10 @@ const Entities = () => {
     setFilteredItems(foundItems);
   };
 
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setFilterValue(e.currentTarget.value);
+  };
+
   return (
     <main className="flex flex-col items-start justify-start w-4/5 pl-10 space-y-4">
       <section className="flex flex-col w-full">
@@ -62,6 +74,11 @@ const Entities = () => {
             iconClassName="h-5 text-blue-icon transform -translate-y-1/2 right-1.5 top-1/2"
             wrapperClassName="flex flex-1 max-w-lg"
           />
+          <SelectFilter
+            value={filterValue}
+            options={selectFilterOptions}
+            onChange={handleSelect}
+          />
         </div>
         <div
           className={clsx("grid grid-flow-row gap-y-3", {
@@ -74,31 +91,13 @@ const Entities = () => {
                 filteredItems.includes(publication.text)
               )
             : publications
-          ).map(({ id, text, image }) => (
-            <div
-              key={`entity-${id}`}
-              className="flex p-2 bg-white rounded shadow hover:shadow-md cursor-pointer hover:-translate-y-0.5 transition duration-300 transform"
-            >
-              <div className="flex flex-shrink-0 w-20 h-20">
-                <img
-                  src={image}
-                  alt={text}
-                  className="object-cover w-full h-full rounded-md"
-                />
-              </div>
-              <div className="flex flex-col justify-between ml-2 overflow-hidden">
-                <h2
-                  title={text}
-                  className="max-w-full font-semibold text-blue-800 truncate"
-                >
-                  {text}
-                </h2>
-                <p className="text-xs text-gray-icon">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </div>
-            </div>
-          ))}
+          )
+            .filter(
+              ({ owner }) => filterValue === "followed" || owner.id === user_id
+            )
+            .map((entity) => (
+              <EntityCard entity={entity} />
+            ))}
         </div>
       </section>
     </main>
