@@ -8,6 +8,8 @@ type UserType = {
   lastName: string;
   picture: string;
   title: string;
+  location: any;
+  phone: string;
 } | null;
 
 const initialState = null as UserType;

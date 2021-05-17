@@ -7,7 +7,12 @@ import Profile from "./components/organisms/Profile";
 import Entities from "./components/organisms/Entities";
 import { store } from "./redux/store";
 import { initDayJs } from "./helpers/initializers";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
   initDayJs();
@@ -28,6 +33,9 @@ function App() {
               </Route>
               <Route path="/me">
                 <Profile />
+              </Route>
+              <Route path="/profile" exact>
+                <Redirect to="/me" />
               </Route>
               <Route path="/">
                 <Home />

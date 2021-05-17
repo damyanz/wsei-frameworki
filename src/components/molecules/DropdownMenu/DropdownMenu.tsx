@@ -2,7 +2,7 @@ import { useState } from "react";
 import Input from "../../atoms/Input";
 import IconLabel from "../../atoms/IconLabel";
 import { filterByText } from "../../../helpers/common";
-import { ProfileCard } from "../Sidebar/Sidebar";
+import ProfileCard from "../../molecules/ProfileCard";
 import clsx from "clsx";
 import { workspaces, platform } from "../../../constants";
 import { Link } from "react-router-dom";
