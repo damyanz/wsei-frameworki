@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../../redux/hooks";
 import IconLabel from "../../atoms/IconLabel";
-import Input from "../../atoms/Input";
 import OutlinedButton from "../../atoms/OutlinedButton";
 import Icon from "../../atoms/Icon";
 import EditableSpan from "../EditableSpan";
