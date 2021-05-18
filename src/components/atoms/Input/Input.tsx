@@ -8,6 +8,7 @@ type InputType = {
   icon?: "search";
   iconClassName?: string;
   wrapperClassName?: string;
+  name?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   disabled?: boolean;
 };
@@ -17,6 +18,7 @@ const Input = ({
   placeholder,
   onChange,
   className,
+  name,
   icon,
   iconClassName,
   wrapperClassName,
@@ -25,6 +27,7 @@ const Input = ({
   return (
     <div className={clsx("relative", wrapperClassName)}>
       <input
+        name={name}
         type={type}
         placeholder={placeholder}
         onChange={onChange}

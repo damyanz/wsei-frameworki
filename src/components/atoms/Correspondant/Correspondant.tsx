@@ -1,0 +1,35 @@
+import EditableSpan from "../../molecules/EditableSpan";
+import IconLabel from "../IconLabel";
+
+const Correspondant = ({ picture, editable }: any) => {
+  return (
+    <div className="flex items-center w-full p-1.5 bg-gray-200">
+      {picture ? (
+        <img src={picture} alt={picture} className="w-8 h-8 rounded-full" />
+      ) : (
+        <div className="rounded-full w-7 h-7"></div>
+      )}
+      <EditableSpan editable={editable} className="w-1/3 ml-2">
+        Firstname Lastname
+      </EditableSpan>
+      <div className="flex space-x-10">
+        <IconLabel
+          label="Message"
+          labelClassName="font-light"
+          iconName="chat"
+          iconType="outlined"
+          iconClassName="w-5 h-5"
+        />
+        <IconLabel
+          label="Profile"
+          labelClassName="font-light"
+          iconName="user"
+          iconType="outlined"
+          iconClassName="w-5 h-5"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Correspondant;

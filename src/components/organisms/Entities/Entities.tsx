@@ -22,7 +22,7 @@ const Entities = () => {
   const [sortAscending, setSordAscending] = useState<boolean>(true);
   const [fullscreen, setFullscreen] = useState<boolean>(false);
   const [urlCopied, setUrlCopied] = useState<boolean>(false);
-  const [filtersVisible, setFiltersVisible] = useState<boolean>(true);
+  const [filtersVisible, setFiltersVisible] = useState<boolean>(false);
 
   const userData = useAppSelector((state) => state.user);
   const { id: user_id } = userData || {};

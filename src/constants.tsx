@@ -148,3 +148,66 @@ export const selectFilterOptions = [
     icon: "user",
   },
 ];
+
+export const tableAData = {
+  legend: ["Name", "Entity", "Location", "Expertise", "Date", "Firm"],
+  records: [
+    {
+      fields: [
+        "Operation timeout",
+        "Renault company",
+        "France",
+        "#Tax",
+        "20/01/2018",
+        "Racine",
+      ],
+    },
+    {
+      fields: [
+        "Op. Prometheus",
+        "Renault HQ",
+        "USA",
+        "#M&A",
+        "18/02/2019",
+        "Clifford chance",
+      ],
+    },
+    {
+      fields: [
+        "Op. Latandre",
+        "Renault Brawden",
+        "Italia",
+        "#Social",
+        "18/02/2019",
+        "SVZ",
+      ],
+    },
+  ],
+};
+
+export const tableBData = {
+  legend: ["Name", "Entity", "Location", "Expertise", "Date"],
+  records: [
+    {
+      fields: [
+        "Operation timeout",
+        "Renault company",
+        "France",
+        "#Tax",
+        "20/01/2018",
+      ],
+    },
+    {
+      fields: ["Op. Prometheus", "Renault HQ", "USA", "#M&A", "18/02/2019"],
+    },
+    {
+      fields: [
+        "Op. Latandre",
+        "Renault Brawden",
+        "Italia",
+        "#Social",
+        "18/02/2019",
+      ],
+    },
+  ],
+};

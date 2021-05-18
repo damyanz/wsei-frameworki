@@ -47,7 +47,7 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
 
   if (type === "extended") {
     return (
-      <div className="relative flex items-center flex-shrink-0 w-full">
+      <div className="relative flex items-center flex-shrink-0 w-full py-8">
         <div className="flex flex-col items-center pr-6">
           {picture ? (
             <img src={picture} alt="" className="w-16 h-16 rounded-full" />

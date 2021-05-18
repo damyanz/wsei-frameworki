@@ -31,6 +31,7 @@ import {
   ArrowsExpandIcon,
   XIcon,
   ShareIcon,
+  ChatIcon,
   FilterIcon as FilterIconOutlined,
   PencilAltIcon as PencilAltIconOutlined,
   UsersIcon as UsersIconOutlined,
@@ -82,6 +83,7 @@ const outlinedIcons: IconsType = {
   fullscreen: ArrowsExpandIcon,
   x: XIcon,
   share: ShareIcon,
+  chat: ChatIcon,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {

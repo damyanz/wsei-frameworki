@@ -1,7 +1,14 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import Input from "../../atoms/Input";
 
-const EditableSpan = ({ children, editable, className, onChange }: any) => {
+const EditableSpan = ({
+  children,
+  editable,
+  className,
+  name,
+  onChange,
+  multiple,
+}: any) => {
   const [savedValue, setSavedValue] = useState<string>("");
   const [currentValue, setCurrentValue] = useState<string>(children);
 
@@ -21,11 +28,18 @@ const EditableSpan = ({ children, editable, className, onChange }: any) => {
 
   return editable ? (
     <Input
+      name={name}
       wrapperClassName="w-48"
-      className="p-0.5 border rounded-sm border-gray-light"
+      className="p-0.5 border max-w-full rounded-sm border-gray-light"
       placeholder={savedValue}
       onChange={handleChange}
     />
+  ) : multiple ? (
+    <>
+      {savedValue.split(";").map((phrase) => (
+        <span className={className}>{phrase}</span>
+      ))}
+    </>
   ) : (
     <span className={className}>{savedValue}</span>
   );
