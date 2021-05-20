@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Icon from "../Icon";
+import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
 
 export type ViewType = "mosaic" | "list";

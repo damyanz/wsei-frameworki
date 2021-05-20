@@ -1,4 +1,4 @@
-import IconLabel from "../../atoms/IconLabel";
+import IconLabel from "@components/atoms/IconLabel";
 
 const NotFound = () => {
   return (

@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { useAppSelector } from "../../../redux/hooks";
-import Icon from "../../atoms/Icon";
-import ViewSwitch from "../../atoms/ViewSwitch";
-import EntityCard from "../../atoms/EntityCard";
-import { ViewType } from "../../atoms/ViewSwitch/ViewSwitch";
-import { APP_ID } from "../../../env";
-import { filterByText } from "../../../helpers/common";
+import { useAppSelector } from "@redux/hooks";
+import Icon from "@components/atoms/Icon";
+import ViewSwitch from "@components/atoms/ViewSwitch";
+import EntityCard from "@components/atoms/EntityCard";
+import { ViewType } from "@components/atoms/ViewSwitch/ViewSwitch";
+import { APP_ID } from "@env";
+import { filterByText } from "@helpers/common";
 import clsx from "clsx";
-import OptionsBar from "../../molecules/OptionsBar";
-import Loader from "../../atoms/Loader";
+import OptionsBar from "@components/molecules/OptionsBar";
+import Loader from "@components/atoms/Loader";
 
 const Entities = () => {
   const [viewType, setViewType] = useState<ViewType>("mosaic");

@@ -1,7 +1,7 @@
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch } from "@redux/hooks";
 import { useEffect } from "react";
-import { APP_ID } from "../env";
-import { setUserData } from "../redux/slices/userSlice";
+import { APP_ID } from "@env";
+import { setUserData } from "@redux/slices/userSlice";
 
 const useUser = () => {
   const dispatch = useAppDispatch();

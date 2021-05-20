@@ -1,10 +1,10 @@
 import { useState } from "react";
-import EditableSpan from "../EditableSpan";
-import { useAppSelector } from "../../../redux/hooks";
-import Correspondant from "../../atoms/Correspondant";
-import Icon from "../../atoms/Icon";
-import { tableAData, tableBData } from "../../../constants";
-import Table from "../Table";
+import EditableSpan from "@components/molecules/EditableSpan";
+import { useAppSelector } from "@redux/hooks";
+import Correspondant from "@components/atoms/Correspondant";
+import Icon from "@components/atoms/Icon";
+import { tableAData, tableBData } from "@/constants";
+import Table from "@components/molecules/Table";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 
@@ -18,7 +18,7 @@ const PanelInfo = () => {
       <Icon
         onClick={() => setEditMode(!editMode)}
         name="pencil"
-        className="absolute right-0 w-5 h-5 top-5"
+        className="absolute right-0 w-5 h-5 cursor-pointer top-5"
       />
       <div className="flex flex-col border-b">
         <h2 className="mb-4 font-semibold">Panel informations</h2>

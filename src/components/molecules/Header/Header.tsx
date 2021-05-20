@@ -1,7 +1,7 @@
 import { HomeIcon, BellIcon, ChatAlt2Icon } from "@heroicons/react/solid";
 import clsx from "clsx";
-import Dropdown from "../Dropdown";
-import Input from "../../atoms/Input";
+import Dropdown from "@components/molecules/Dropdown";
+import Input from "@components/atoms/Input";
 import { Link } from "react-router-dom";
 
 const Header = () => {

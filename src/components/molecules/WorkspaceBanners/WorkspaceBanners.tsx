@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Icon from "../../atoms/Icon";
+import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
-import WorkspaceBanner from "../../atoms/WorkspaceBanner";
-import { bannersData } from "../../../constants";
+import WorkspaceBanner from "@components/atoms/WorkspaceBanner";
+import { bannersData } from "@/constants";
 import { Link } from "react-router-dom";
 
 const WorkspaceBanners = () => {

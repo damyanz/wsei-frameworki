@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import useOutsideClick from "../../../hooks/useOutsideClick";
+import useOutsideClick from "@hooks/useOutsideClick";
 import clsx from "clsx";
-import IconLabel from "../../atoms/IconLabel";
-import Icon from "../../atoms/Icon";
-import DropdownMenu from "../DropdownMenu";
+import IconLabel from "@components/atoms/IconLabel";
+import Icon from "@components/atoms/Icon";
+import DropdownMenu from "@components/molecules/DropdownMenu";
 import { useLocation } from "react-router-dom";
 
 interface LocationState {

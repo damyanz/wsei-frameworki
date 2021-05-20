@@ -1,4 +1,4 @@
-import PersonLabel from "../../atoms/PersonLabel";
+import PersonLabel from "@components/atoms/PersonLabel";
 
 const PublicationThumb = ({ publication }: any) => {
   return (

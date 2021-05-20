@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import PublicationThumb from "../../atoms/PublicationThumb";
-import PersonLabel from "../../atoms/PersonLabel";
+import PublicationThumb from "@components/atoms/PublicationThumb";
+import PersonLabel from "@components/atoms/PersonLabel";
 
 type LatestPublicationsType = {
   publications: any;

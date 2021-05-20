@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Icon from "../../atoms/Icon";
+import Icon from "@components/atoms/Icon";
 
 type InputType = {
   type?: string;

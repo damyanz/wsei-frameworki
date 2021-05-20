@@ -1,4 +1,4 @@
-import Icon from "../../atoms/Icon";
+import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
 
 const Filter = ({

@@ -1,6 +1,6 @@
-import IconLabel from "../../atoms/IconLabel";
-import Input from "../../atoms/Input";
-import SelectFilter from "../../atoms/SelectFilter";
+import IconLabel from "@components/atoms/IconLabel";
+import Input from "@components/atoms/Input";
+import SelectFilter from "@components/atoms/SelectFilter";
 
 const Filters = () => {
   return (

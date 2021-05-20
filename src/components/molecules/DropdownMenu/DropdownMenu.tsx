@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Input from "../../atoms/Input";
-import IconLabel from "../../atoms/IconLabel";
-import { filterByText } from "../../../helpers/common";
-import ProfileCard from "../../molecules/ProfileCard";
+import Input from "@components/atoms/Input";
+import IconLabel from "@components/atoms/IconLabel";
+import { filterByText } from "@helpers/common";
+import ProfileCard from "@components/molecules/ProfileCard";
 import clsx from "clsx";
-import { workspaces, platform } from "../../../constants";
+import { workspaces, platform } from "@/constants";
 import { Link } from "react-router-dom";
 
 const DropdownMenu = () => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { APP_ID } from "../../../env";
-import LatestPublications from "../../molecules/LatestPublications";
-import Workspaces from "../../molecules/Workspaces";
-import ResumeYourWork from "../../molecules/ResumeYourWork";
-import Loader from "../../atoms/Loader";
+import { APP_ID } from "@env";
+import LatestPublications from "@components/molecules/LatestPublications";
+import Workspaces from "@components/molecules/Workspaces";
+import ResumeYourWork from "@components/molecules/ResumeYourWork";
+import Loader from "@components/atoms/Loader";
 
 const Home = () => {
   const [publications, setPublications] = useState<any>(null);

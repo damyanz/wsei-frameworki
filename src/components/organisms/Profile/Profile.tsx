@@ -1,6 +1,6 @@
-import ProfileCard from "../../molecules/ProfileCard";
-import About from "../../molecules/About";
-import PanelInfo from "../../molecules/PanelInfo";
+import ProfileCard from "@components/molecules/ProfileCard";
+import About from "@components/molecules/About";
+import PanelInfo from "@components/molecules/PanelInfo";
 
 const Profile = () => {
   return (

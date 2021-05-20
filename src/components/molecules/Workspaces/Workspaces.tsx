@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import WorkspaceCard from "../WorkspaceCard";
-import { workspaces } from "../../../constants";
+import WorkspaceCard from "@components/molecules/WorkspaceCard";
+import { workspaces } from "@/constants";
 
 const Workspaces = () => {
   return (

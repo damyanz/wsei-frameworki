@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../redux/hooks";
-import IconLabel from "../../atoms/IconLabel";
-import OutlinedButton from "../../atoms/OutlinedButton";
-import Icon from "../../atoms/Icon";
-import EditableSpan from "../EditableSpan";
-import Loader from "../../atoms/Loader";
+import { useAppSelector } from "@redux/hooks";
+import IconLabel from "@components/atoms/IconLabel";
+import OutlinedButton from "@components/atoms/OutlinedButton";
+import Icon from "@components/atoms/Icon";
+import EditableSpan from "@components/molecules/EditableSpan";
+import Loader from "@components/atoms/Loader";
 
 type ProfileCardProps = {
   type?: "small" | "extended";
@@ -87,7 +87,7 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
         <Icon
           onClick={() => setEditMode(!editMode)}
           name="pencil"
-          className="absolute top-0 right-0 w-5 h-5"
+          className="absolute top-0 right-0 w-5 h-5 cursor-pointer"
         />
       </div>
     );

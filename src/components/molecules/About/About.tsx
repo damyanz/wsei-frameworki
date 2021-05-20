@@ -1,6 +1,6 @@
 import { useState } from "react";
-import EditableSpan from "../EditableSpan";
-import Icon from "../../atoms/Icon";
+import EditableSpan from "@components/molecules/EditableSpan";
+import Icon from "@components/atoms/Icon";
 
 const About = () => {
   const [editMode, setEditMode] = useState<boolean>(false);
@@ -45,7 +45,7 @@ const About = () => {
       <Icon
         onClick={() => setEditMode(!editMode)}
         name="pencil"
-        className="absolute right-0 w-5 h-5 top-5"
+        className="absolute right-0 w-5 h-5 cursor-pointer top-5"
       />
     </section>
   );

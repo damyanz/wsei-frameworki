@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Icon from "../../atoms/Icon";
-import IconLabel from "../../atoms/IconLabel";
+import Icon from "@components/atoms/Icon";
+import IconLabel from "@components/atoms/IconLabel";
 
 const WorkspaceCard = ({ workspace }: any) => {
   const { icon, label, picture } = workspace;

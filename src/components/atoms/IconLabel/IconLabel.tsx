@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Icon from "../Icon";
+import Icon from "@components/atoms/Icon";
 
 type IconLabelProps = {
   label: string;

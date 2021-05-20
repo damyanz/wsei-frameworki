@@ -1,11 +1,11 @@
-import { useAppSelector } from "../../../redux/hooks";
-import { filters, selectFilterOptions } from "../../../constants";
-import { getRandomArrayItem, filterByText } from "../../../helpers/common";
-import Input from "../../atoms/Input";
+import { useAppSelector } from "@redux/hooks";
+import { filters, selectFilterOptions } from "@/constants";
+import { getRandomArrayItem, filterByText } from "@helpers/common";
+import Input from "@components/atoms/Input";
 import React, { useState, useMemo } from "react";
-import Filter from "../../atoms/Filter";
-import SelectFilter from "../../atoms/SelectFilter";
-import ResumeItem from "../ResumeItem";
+import Filter from "@components/atoms/Filter";
+import SelectFilter from "@components/atoms/SelectFilter";
+import ResumeItem from "@components/molecules/ResumeItem";
 import { Link } from "react-router-dom";
 
 type ResumeYourWorkType = {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import Input from "../../atoms/Input";
+import Input from "@components/atoms/Input";
 
 const EditableSpan = ({
   children,

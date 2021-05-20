@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import EditableSpan from "../../molecules/EditableSpan";
-import IconLabel from "../IconLabel";
+import EditableSpan from "@components/molecules/EditableSpan";
+import IconLabel from "@components/atoms/IconLabel";
 
 const Correspondant = ({ picture, editable }: any) => {
   return (

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { APP_ID } from "../../../env";
-import WorkspaceHeading from "../../molecules/WorkspaceHeading";
-import WorkspaceBanners from "../../molecules/WorkspaceBanners";
-import { workspaces } from "../../../constants";
-import ResumeYourWork from "../../molecules/ResumeYourWork";
-import Loader from "../../atoms/Loader";
+import { APP_ID } from "@env";
+import WorkspaceHeading from "@components/molecules/WorkspaceHeading";
+import WorkspaceBanners from "@components/molecules/WorkspaceBanners";
+import { workspaces } from "@/constants";
+import ResumeYourWork from "@components/molecules/ResumeYourWork";
+import Loader from "@components/atoms/Loader";
 
 interface ParamTypes {
   slug: string | undefined;

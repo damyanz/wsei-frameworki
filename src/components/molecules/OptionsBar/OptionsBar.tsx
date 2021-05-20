@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import clsx from "clsx";
-import SelectFilter from "../../atoms/SelectFilter";
-import Icon from "../../atoms/Icon";
-import Input from "../../atoms/Input";
-import IconLabel from "../../atoms/IconLabel";
-import Filters from "../../molecules/Filters";
-import { selectFilterOptions } from "../../../constants";
+import SelectFilter from "@components/atoms/SelectFilter";
+import Icon from "@components/atoms/Icon";
+import Input from "@components/atoms/Input";
+import IconLabel from "@components/atoms/IconLabel";
+import Filters from "@components/molecules/Filters";
+import { selectFilterOptions } from "@/constants";
 
 type OptionsBarType = {
   sortAscending: boolean;

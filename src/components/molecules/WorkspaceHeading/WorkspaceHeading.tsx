@@ -1,6 +1,6 @@
 import { useState } from "react";
 import clsx from "clsx";
-import Icon from "../../atoms/Icon";
+import Icon from "@components/atoms/Icon";
 
 const WorkspaceHeading = ({ workspace, className }: any) => {
   const [pictureLoaded, setPictureLoaded] = useState<boolean>(false);

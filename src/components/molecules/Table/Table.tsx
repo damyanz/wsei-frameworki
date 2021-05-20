@@ -1,4 +1,4 @@
-import EdiableSpan from "../EditableSpan";
+import EdiableSpan from "@components/molecules/EditableSpan";
 
 const Table = ({ tableData, editable }: any) => {
   const { legend, records } = tableData;

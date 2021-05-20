@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
-import PersonLabel from "../../atoms/PersonLabel";
-import IconLabel from "../../atoms/IconLabel";
-import Filter from "../../atoms/Filter";
-import { workspaces, filters } from "../../../constants";
-import { getRandomArrayItem } from "../../../helpers/common";
+import PersonLabel from "@components/atoms/PersonLabel";
+import IconLabel from "@components/atoms/IconLabel";
+import Filter from "@components/atoms/Filter";
+import { workspaces, filters } from "@/constants";
+import { getRandomArrayItem } from "@helpers/common";
 
 type ResumeItemType = {
   title: string;

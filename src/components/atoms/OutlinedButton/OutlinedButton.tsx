@@ -1,4 +1,4 @@
-import Icon from "../Icon";
+import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
 
 const OutlinedButton = ({ className, onClick, iconName }: any) => {

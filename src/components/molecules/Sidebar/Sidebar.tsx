@@ -1,6 +1,6 @@
-import IconLabel from "../../atoms/IconLabel";
+import IconLabel from "@components/atoms/IconLabel";
 import { Link } from "react-router-dom";
-import ProfileCard from "../../molecules/ProfileCard";
+import ProfileCard from "@components/molecules/ProfileCard";
 
 const Sidebar = () => {
   return (
