@@ -32,6 +32,7 @@ import {
   XIcon,
   ShareIcon,
   ChatIcon,
+  HashtagIcon,
   FilterIcon as FilterIconOutlined,
   PencilAltIcon as PencilAltIconOutlined,
   UsersIcon as UsersIconOutlined,
@@ -84,6 +85,7 @@ const outlinedIcons: IconsType = {
   x: XIcon,
   share: ShareIcon,
   chat: ChatIcon,
+  hashtag: HashtagIcon,
 };
 
 const Icon = ({ name, type = "solid", ...rest }: any) => {

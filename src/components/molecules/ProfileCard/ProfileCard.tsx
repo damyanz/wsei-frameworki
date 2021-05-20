@@ -5,6 +5,7 @@ import IconLabel from "../../atoms/IconLabel";
 import OutlinedButton from "../../atoms/OutlinedButton";
 import Icon from "../../atoms/Icon";
 import EditableSpan from "../EditableSpan";
+import Loader from "../../atoms/Loader";
 
 type ProfileCardProps = {
   type?: "small" | "extended";
@@ -21,11 +22,11 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
     setProfileData(userData);
   }, [userData]);
 
-  if (!profileData) return <>"Loading..."</>;
+  if (!profileData) return <Loader className="w-10 h-10 m-10 mx-auto" />;
 
   if (type === "small") {
     return (
-      <div className="flex items-center">
+      <div className="flex items-center cursor-pointer">
         {picture ? (
           <img src={picture} alt="" className="rounded-full w-7 h-7" />
         ) : (
@@ -94,36 +95,42 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
 
   return (
     <section className="flex flex-col w-full bg-white rounded shadow">
-      <div className="flex flex-col items-center w-full py-5 border-b">
-        {picture ? (
-          <img src={picture} alt="" className="w-16 h-16 rounded-full" />
-        ) : (
-          <div className="w-16 h-16 bg-gray-500 rounded-full" />
-        )}
-        {(firstName || lastName) && (
-          <span className="my-1 font-semibold text-blue-800">
-            {firstName} {lastName}
-          </span>
-        )}
-        <span className="text-sm text-gray-400">Job title - Company</span>
-      </div>
+      <Link to="/me">
+        <div className="flex flex-col items-center w-full py-5 border-b">
+          {picture ? (
+            <img src={picture} alt="" className="w-16 h-16 rounded-full" />
+          ) : (
+            <div className="w-16 h-16 bg-gray-500 rounded-full" />
+          )}
+          {(firstName || lastName) && (
+            <span className="my-1 font-semibold text-blue-800">
+              {firstName} {lastName}
+            </span>
+          )}
+          <span className="text-sm text-gray-400">Job title - Company</span>
+        </div>
+      </Link>
       <div className="flex flex-col px-4 py-3 space-y-3">
-        <div className="flex justify-between">
-          <IconLabel
-            label="Your network"
-            iconName="network"
-            iconClassName="w-6 h-6 text-blue-icon mr-1.5"
-          />
-          <OutlinedButton iconName="user-add" />
-        </div>
-        <div className="flex justify-between">
-          <IconLabel
-            label="Your Publications"
-            iconName="publications"
-            iconClassName="w-6 h-6 text-blue-icon mr-1.5"
-          />
-          <OutlinedButton iconName="plus" />
-        </div>
+        <Link to="/network">
+          <div className="flex justify-between">
+            <IconLabel
+              label="Your network"
+              iconName="network"
+              iconClassName="w-6 h-6 text-blue-icon mr-1.5"
+            />
+            <OutlinedButton iconName="user-add" />
+          </div>
+        </Link>
+        <Link to="/publications">
+          <div className="flex justify-between">
+            <IconLabel
+              label="Your Publications"
+              iconName="publications"
+              iconClassName="w-6 h-6 text-blue-icon mr-1.5"
+            />
+            <OutlinedButton iconName="plus" />
+          </div>
+        </Link>
       </div>
     </section>
   );

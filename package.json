@@ -29,7 +29,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "generate": "npx generate-react-cli component"
   },
   "eslintConfig": {
     "extends": [

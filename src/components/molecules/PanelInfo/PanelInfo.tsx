@@ -62,7 +62,7 @@ const PanelInfo = () => {
           })}
         >
           <Table tableData={tableAData} editable={editMode} />
-          <Link className="py-2 text-blue-600" to="/test">
+          <Link className="py-2 text-blue-600" to="/proposals">
             See more proposals
           </Link>
         </div>

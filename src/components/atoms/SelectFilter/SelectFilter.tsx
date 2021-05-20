@@ -19,7 +19,9 @@ const SelectFilter = ({ value, onChange, options, className }: any) => {
         className="relative text-blue-800 bg-transparent"
       >
         {options.map((option: any) => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
     </div>

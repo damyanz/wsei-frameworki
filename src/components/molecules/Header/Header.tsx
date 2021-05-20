@@ -2,13 +2,16 @@ import { HomeIcon, BellIcon, ChatAlt2Icon } from "@heroicons/react/solid";
 import clsx from "clsx";
 import Dropdown from "../Dropdown";
 import Input from "../../atoms/Input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-20 flex w-screen bg-white shadow-md">
       <div className="relative flex items-center justify-between flex-1 max-w-screen-xl py-1 mx-auto">
         <div className="flex items-center space-x-5">
-          <img src="/logo.png" alt="Company" className="h-8" />
+          <Link to="/">
+            <img src="/logo.png" alt="Company" className="h-8" />
+          </Link>
           <Dropdown />
         </div>
         <Input
@@ -28,9 +31,15 @@ const Header = () => {
 const Cockpit = () => {
   return (
     <div className="flex items-center">
-      <HomeIcon className="h-5 mr-4 text-gray-icon" />
-      <Control name="messages" className="mr-2" />
-      <Control name="notifications" count={3} />
+      <Link to="/">
+        <HomeIcon className="h-5 mr-4 text-gray-icon" />
+      </Link>
+      <Link to="/chat">
+        <Control name="messages" className="mr-2" />
+      </Link>
+      <Link to="/notifications">
+        <Control name="notifications" count={3} />
+      </Link>
     </div>
   );
 };

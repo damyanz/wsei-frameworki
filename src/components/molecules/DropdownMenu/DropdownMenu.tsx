@@ -58,7 +58,7 @@ const DropdownMenu = () => {
                   )
                 : _items;
             const basePaths: any = {
-              platform: "",
+              platform: "/test",
               workspaces: "/workspace",
             };
             if (items.length === 0) return null;
@@ -87,23 +87,29 @@ const DropdownMenu = () => {
         <label className="mb-1.5 text-xs font-semibold text-gray-400">
           Account
         </label>
-        <ProfileCard type="small" />
-        <IconLabel
-          label="Privacy"
-          iconType="outlined"
-          iconName="lock"
-          className="py-1"
-          iconClassName={clsx("w-6 h-6 mr-4")}
-          labelClassName="text-base"
-        />
-        <IconLabel
-          label="Settings"
-          iconType="outlined"
-          iconName="gear"
-          className="py-1"
-          iconClassName={clsx("w-6 h-6 mr-4")}
-          labelClassName="text-base"
-        />
+        <Link to="/me">
+          <ProfileCard type="small" />
+        </Link>
+        <Link to="/privacy">
+          <IconLabel
+            label="Privacy"
+            iconType="outlined"
+            iconName="lock"
+            className="py-1"
+            iconClassName={clsx("w-6 h-6 mr-4")}
+            labelClassName="text-base"
+          />
+        </Link>
+        <Link to="settings">
+          <IconLabel
+            label="Settings"
+            iconType="outlined"
+            iconName="gear"
+            className="py-1"
+            iconClassName={clsx("w-6 h-6 mr-4")}
+            labelClassName="text-base"
+          />
+        </Link>
       </div>
       <div className="flex justify-center py-2">
         <IconLabel

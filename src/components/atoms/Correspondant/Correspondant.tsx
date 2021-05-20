@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import EditableSpan from "../../molecules/EditableSpan";
 import IconLabel from "../IconLabel";
 
@@ -13,20 +14,24 @@ const Correspondant = ({ picture, editable }: any) => {
         Firstname Lastname
       </EditableSpan>
       <div className="flex space-x-10">
-        <IconLabel
-          label="Message"
-          labelClassName="font-light"
-          iconName="chat"
-          iconType="outlined"
-          iconClassName="w-5 h-5"
-        />
-        <IconLabel
-          label="Profile"
-          labelClassName="font-light"
-          iconName="user"
-          iconType="outlined"
-          iconClassName="w-5 h-5"
-        />
+        <Link to="/chat">
+          <IconLabel
+            label="Message"
+            labelClassName="font-light"
+            iconName="chat"
+            iconType="outlined"
+            iconClassName="w-5 h-5"
+          />
+        </Link>
+        <Link to="/me">
+          <IconLabel
+            label="Profile"
+            labelClassName="font-light"
+            iconName="user"
+            iconType="outlined"
+            iconClassName="w-5 h-5"
+          />
+        </Link>
       </div>
     </div>
   );

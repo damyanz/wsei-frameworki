@@ -3,6 +3,7 @@ import Icon from "../../atoms/Icon";
 import clsx from "clsx";
 import WorkspaceBanner from "../../atoms/WorkspaceBanner";
 import { bannersData } from "../../../constants";
+import { Link } from "react-router-dom";
 
 const WorkspaceBanners = () => {
   const [open, setOpen] = useState<boolean>(true);
@@ -30,7 +31,9 @@ const WorkspaceBanners = () => {
         })}
       >
         {bannersData.map((bannerData) => (
-          <WorkspaceBanner {...bannerData} />
+          <Link to={bannerData.link}>
+            <WorkspaceBanner {...bannerData} />
+          </Link>
         ))}
       </div>
     </section>

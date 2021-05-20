@@ -5,6 +5,7 @@ import WorkspaceHeading from "../../molecules/WorkspaceHeading";
 import WorkspaceBanners from "../../molecules/WorkspaceBanners";
 import { workspaces } from "../../../constants";
 import ResumeYourWork from "../../molecules/ResumeYourWork";
+import Loader from "../../atoms/Loader";
 
 interface ParamTypes {
   slug: string | undefined;
@@ -34,11 +35,17 @@ const Workspace = () => {
     <main className="flex flex-col items-start justify-start w-4/5 pl-10 space-y-4">
       <WorkspaceHeading workspace={workspaceData} className="w-full" />
       <WorkspaceBanners />
-      <ResumeYourWork
-        label="Latest updates"
-        publications={publications || []}
-        withFilters
-      />
+      {publications ? (
+        <ResumeYourWork
+          label="Latest updates"
+          publications={publications}
+          withFilters
+        />
+      ) : (
+        <div className="flex items-center justify-center w-full h-64">
+          <Loader />
+        </div>
+      )}
     </main>
   );
 };

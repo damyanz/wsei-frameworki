@@ -45,12 +45,12 @@ export const platform = [
   {
     label: "Publications",
     icon: "publications",
-    slug: "",
+    slug: "publications",
   },
   {
     label: "People",
     icon: "network",
-    slug: "",
+    slug: "network",
   },
   {
     label: "Entities",
@@ -60,7 +60,7 @@ export const platform = [
   {
     label: "Administration",
     icon: "shield",
-    slug: "",
+    slug: "shield",
   },
 ];
 
@@ -72,6 +72,7 @@ export const bannersData = [
         Explore your <strong>entities</strong>
       </>
     ),
+    link: "/entities",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo beatae quis ipsam quaerat.",
   },
@@ -82,6 +83,7 @@ export const bannersData = [
         Structure your <strong>ownership</strong>
       </>
     ),
+    link: "/ownership",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo beatae quis ipsam quaerat.",
   },
@@ -92,6 +94,7 @@ export const bannersData = [
         Define the <strong>calendar</strong>
       </>
     ),
+    link: "/calendar",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo beatae quis ipsam quaerat.",
   },
