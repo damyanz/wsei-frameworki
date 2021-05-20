@@ -68,7 +68,10 @@ const DropdownMenu = () => {
                   {title}
                 </label>
                 {items.map(({ label, iconClassName, icon, slug }) => (
-                  <Link to={`${basePaths[type]}/${slug}`}>
+                  <Link
+                    key={`menuItem-${slug}`}
+                    to={`${basePaths[type]}/${slug}`}
+                  >
                     <IconLabel
                       label={label}
                       iconName={icon}

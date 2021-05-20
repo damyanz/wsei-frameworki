@@ -26,7 +26,7 @@ const About = () => {
   return (
     <section className="relative flex flex-col w-full pt-5 border-t border-b">
       {sections.map(({ heading, items }) => (
-        <div className="flex flex-col mb-5">
+        <div key={`about-${heading}`} className="flex flex-col mb-5">
           <h3 className="mb-2.5 text-sm text-gray-icon">{heading}</h3>
           <div className="flex space-x-2.5">
             <EditableSpan

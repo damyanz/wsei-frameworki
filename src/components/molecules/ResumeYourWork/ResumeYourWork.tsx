@@ -6,6 +6,7 @@ import React, { useState, useMemo } from "react";
 import Filter from "../../atoms/Filter";
 import SelectFilter from "../../atoms/SelectFilter";
 import ResumeItem from "../ResumeItem";
+import { Link } from "react-router-dom";
 
 type ResumeYourWorkType = {
   publications: any[];
@@ -113,13 +114,14 @@ const ResumeYourWork = ({
             )
           : publications
         ).map(({ id, owner, publishDate, text, tags }) => (
-          <ResumeItem
-            key={`resume-${id}`}
-            title={text}
-            user={owner}
-            updatedAt={publishDate}
-            tags={withFilters && tags}
-          />
+          <Link key={`resume-${id}`} to={`/publications/${id}`}>
+            <ResumeItem
+              title={text}
+              user={owner}
+              updatedAt={publishDate}
+              tags={withFilters && tags}
+            />
+          </Link>
         ))}
       </div>
     </section>

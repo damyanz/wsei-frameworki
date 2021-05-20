@@ -31,7 +31,6 @@ const Entities = () => {
           cache: "force-cache",
         });
         const { data } = await res.json();
-        console.log(data);
         setPublications(data);
         setLoadingPublications(false);
       } catch (err) {
@@ -116,7 +115,7 @@ const Entities = () => {
               return 0;
             })
             .map((entity) => (
-              <EntityCard entity={entity} />
+              <EntityCard key={`entity-${entity.id}`} entity={entity} />
             ))}
         </div>
       </section>

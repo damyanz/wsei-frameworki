@@ -58,11 +58,8 @@ const LatestPublications = ({
         </h2>
         <div className="flex flex-col mt-2 space-y-2">
           {rest?.map((publication: any) => (
-            <Link to={`/publications/${publication.id}`}>
-              <PublicationThumb
-                key={publication.id}
-                publication={publication}
-              />
+            <Link key={publication.id} to={`/publications/${publication.id}`}>
+              <PublicationThumb publication={publication} />
             </Link>
           ))}
         </div>

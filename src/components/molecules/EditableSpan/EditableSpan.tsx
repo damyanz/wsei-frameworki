@@ -37,7 +37,9 @@ const EditableSpan = ({
   ) : multiple ? (
     <>
       {savedValue.split(";").map((phrase) => (
-        <span className={className}>{phrase}</span>
+        <span key={`phrase-${phrase}`} className={className}>
+          {phrase}
+        </span>
       ))}
     </>
   ) : (

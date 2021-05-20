@@ -66,6 +66,7 @@ export const platform = [
 
 export const bannersData = [
   {
+    id: "entities",
     icon: "office-building",
     title: (
       <>
@@ -77,6 +78,7 @@ export const bannersData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo beatae quis ipsam quaerat.",
   },
   {
+    id: "ownership",
     icon: "cube",
     title: (
       <>
@@ -88,6 +90,7 @@ export const bannersData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo beatae quis ipsam quaerat.",
   },
   {
+    id: "calendar",
     icon: "calendar",
     title: (
       <>

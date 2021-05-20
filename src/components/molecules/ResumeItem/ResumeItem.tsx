@@ -32,7 +32,12 @@ const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemType) => {
                 ({ value }) => tag === value
               );
               return (
-                <Filter label={label} icon={icon} bgClassName={bgClassName} />
+                <Filter
+                  key={tag}
+                  label={label}
+                  icon={icon}
+                  bgClassName={bgClassName}
+                />
               );
             })}
           </div>

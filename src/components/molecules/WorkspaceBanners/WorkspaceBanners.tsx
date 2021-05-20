@@ -31,7 +31,7 @@ const WorkspaceBanners = () => {
         })}
       >
         {bannersData.map((bannerData) => (
-          <Link to={bannerData.link}>
+          <Link key={`workspaceBanner-${bannerData.id}`} to={bannerData.link}>
             <WorkspaceBanner {...bannerData} />
           </Link>
         ))}
