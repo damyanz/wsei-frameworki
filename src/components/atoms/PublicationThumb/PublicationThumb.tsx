@@ -11,7 +11,7 @@ const PublicationThumb = ({ publication }: PublicationThumbProps) => {
       <div className="box-content absolute w-full h-full p-1 transition-opacity duration-100 transform -translate-x-1 rounded opacity-0 bg-gray-section group-hover:opacity-100"></div>
       <div className="z-10 mr-2" style={{ width: 68, height: 68 }}>
         <img
-          alt={publication.title}
+          alt={publication.text}
           className="object-cover w-full h-full"
           src={publication.image}
         />

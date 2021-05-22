@@ -31,13 +31,13 @@ const Header = () => {
 const Cockpit = () => {
   return (
     <div className="flex items-center">
-      <Link to="/">
+      <Link to="/" aria-label="Home">
         <HomeIcon className="h-5 mr-4 text-gray-icon" />
       </Link>
-      <Link to="/chat">
+      <Link to="/chat" aria-label="Chat">
         <Control name="messages" className="mr-2" />
       </Link>
-      <Link to="/notifications">
+      <Link to="/notifications" aria-label="Notifications">
         <Control name="notifications" count={3} />
       </Link>
     </div>

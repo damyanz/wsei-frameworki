@@ -29,7 +29,11 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
     return (
       <div className="flex items-center cursor-pointer">
         {picture ? (
-          <img src={picture} alt="" className="rounded-full w-7 h-7" />
+          <img
+            src={picture}
+            alt={`${firstName} ${lastName}`}
+            className="rounded-full w-7 h-7"
+          />
         ) : (
           <div className="w-8 h-8 bg-gray-500 rounded-full" />
         )}
@@ -51,7 +55,11 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
       <div className="relative flex items-center flex-shrink-0 w-full py-8">
         <div className="flex flex-col items-center pr-6">
           {picture ? (
-            <img src={picture} alt="" className="w-16 h-16 rounded-full" />
+            <img
+              src={picture}
+              alt={`${firstName} ${lastName}`}
+              className="w-16 h-16 rounded-full"
+            />
           ) : (
             <div className="w-8 h-8 bg-gray-500 rounded-full" />
           )}
@@ -99,7 +107,11 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
       <Link to="/me">
         <div className="flex flex-col items-center w-full py-5 border-b">
           {picture ? (
-            <img src={picture} alt="" className="w-16 h-16 rounded-full" />
+            <img
+              src={picture}
+              alt={`${firstName} ${lastName}`}
+              className="w-16 h-16 rounded-full"
+            />
           ) : (
             <div className="w-16 h-16 bg-gray-500 rounded-full" />
           )}
@@ -119,7 +131,7 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
               iconName="network"
               iconClassName="w-6 h-6 text-blue-icon mr-1.5"
             />
-            <OutlinedButton iconName="user-add" />
+            <OutlinedButton name="yourNetwork" iconName="user-add" />
           </div>
         </Link>
         <Link to="/publications">
@@ -129,7 +141,7 @@ export const ProfileCard = ({ type }: ProfileCardProps) => {
               iconName="publications"
               iconClassName="w-6 h-6 text-blue-icon mr-1.5"
             />
-            <OutlinedButton iconName="plus" />
+            <OutlinedButton name="yourPublications" iconName="plus" />
           </div>
         </Link>
       </div>

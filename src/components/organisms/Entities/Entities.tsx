@@ -117,7 +117,7 @@ const Entities = () => {
               return 0;
             })
             .map((entity) => (
-              <Link to={`/entity/${entity.id}`}>
+              <Link key={`entity-${entity.id}`} to={`/entity/${entity.id}`}>
                 <EntityCard key={`entity-${entity.id}`} entity={entity} />
               </Link>
             ))}
