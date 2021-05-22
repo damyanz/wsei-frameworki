@@ -1,8 +1,14 @@
 import { useState } from "react";
 import clsx from "clsx";
 import Icon from "@components/atoms/Icon";
+import { WorkspaceType } from "@/types/global";
 
-const WorkspaceHeading = ({ workspace, className }: any) => {
+type WorkspaceHeadingProps = {
+  workspace: WorkspaceType;
+  className?: string;
+};
+
+const WorkspaceHeading = ({ workspace, className }: WorkspaceHeadingProps) => {
   const [pictureLoaded, setPictureLoaded] = useState<boolean>(false);
   const { icon, label, picture } = workspace;
   return (

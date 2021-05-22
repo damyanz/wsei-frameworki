@@ -4,17 +4,18 @@ import IconLabel from "@components/atoms/IconLabel";
 import Filter from "@components/atoms/Filter";
 import { workspaces, filters } from "@/constants";
 import { getRandomArrayItem } from "@helpers/common";
+import { UserType, WorkspaceType, FilterType } from "@/types/global";
 
-type ResumeItemType = {
+type ResumeItemProps = {
   title: string;
-  user: any;
+  user: Partial<UserType>;
   updatedAt: string;
-  tags?: any[];
+  tags?: string[];
 };
 
-const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemType) => {
-  const workspace = getRandomArrayItem(workspaces);
-  const updateTime = dayjs(updatedAt).fromNow();
+const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemProps) => {
+  const workspace: WorkspaceType = getRandomArrayItem(workspaces);
+  const updateTime: string = dayjs(updatedAt).fromNow();
   return (
     <div className="flex cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition duration-300 transform flex-col flex-shrink-0 bg-white rounded shadow  px-4 pt-2.5 pb-2">
       <h2 className="mb-1 font-semibold text-blue-800 text-md">{title}</h2>
@@ -28,9 +29,9 @@ const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemType) => {
         {tags?.length ? (
           <div className="flex space-x-2">
             {tags.map((tag) => {
-              const { label, icon, bgClassName }: any = filters.find(
+              const { label, icon, bgClassName }: FilterType = filters.find(
                 ({ value }) => tag === value
-              );
+              ) as FilterType;
               return (
                 <Filter
                   key={tag}

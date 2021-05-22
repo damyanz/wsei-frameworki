@@ -1,4 +1,11 @@
-const PersonLabel = ({ person, labelClassName }: any) => {
+import { UserType } from "@/types/global";
+
+type PersonLabelProps = {
+  person: Partial<UserType>;
+  labelClassName?: string;
+};
+
+const PersonLabel = ({ person, labelClassName }: PersonLabelProps) => {
   return (
     <div className="flex space-x-1.5 items-center">
       {person.picture ? (

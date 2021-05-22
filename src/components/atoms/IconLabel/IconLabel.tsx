@@ -1,10 +1,11 @@
 import clsx from "clsx";
 import Icon from "@components/atoms/Icon";
+import { IconNameType, IconTypeType } from "@/types/icons";
 
 type IconLabelProps = {
   label: string;
-  iconName: string;
-  iconType?: "solid" | "outlined";
+  iconName: IconNameType;
+  iconType?: IconTypeType;
   className?: string;
   iconClassName?: string;
   labelClassName?: string;

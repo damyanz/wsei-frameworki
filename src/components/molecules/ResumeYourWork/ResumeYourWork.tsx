@@ -7,9 +7,10 @@ import Filter from "@components/atoms/Filter";
 import SelectFilter from "@components/atoms/SelectFilter";
 import ResumeItem from "@components/molecules/ResumeItem";
 import { Link } from "react-router-dom";
+import { PublicationType } from "@/types/global";
 
-type ResumeYourWorkType = {
-  publications: any[];
+type ResumeYourWorkProps = {
+  publications: PublicationType[];
   withFilters?: boolean;
   label?: string;
 };
@@ -18,14 +19,14 @@ const ResumeYourWork = ({
   publications: _publications,
   label,
   withFilters,
-}: ResumeYourWorkType) => {
+}: ResumeYourWorkProps) => {
   const userData = useAppSelector((state) => state.user);
   const { id: user_id } = userData || {};
 
   const [searchPhrase, setSearchPhrase] = useState<string>("");
   const [filterValue, setFilterValue] = useState<string>("followed");
   const [enabledFilters, setEnabledFilters] = useState<string[]>([]);
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<string[]>([]);
 
   const publications = useMemo(
     () =>
@@ -46,7 +47,7 @@ const ResumeYourWork = ({
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchPhrase(e.currentTarget.value);
-    const foundItems = filterByText(
+    const foundItems: string[] = filterByText(
       e.currentTarget.value,
       publications.map(({ text }) => text)
     );
@@ -67,7 +68,7 @@ const ResumeYourWork = ({
   };
 
   return (
-    <section className="pt-2.5 w-full">
+    <section className="pt-2.5 w-full min-h-screen">
       <div className="flex justify-between w-full">
         <h2 className="pl-4 text-xl font-semibold">{label}</h2>
         <div className="flex items-center mb-2.5 space-x-8">
@@ -102,7 +103,7 @@ const ResumeYourWork = ({
               value={value}
               bgClassName={bgClassName}
               onChange={handleFilterChange}
-              checked={enabledFilters.includes(value)}
+              checked={!!value && enabledFilters.includes(value)}
             />
           ))}
         </div>
@@ -119,7 +120,7 @@ const ResumeYourWork = ({
               title={text}
               user={owner}
               updatedAt={publishDate}
-              tags={withFilters && tags}
+              tags={(withFilters && tags) || []}
             />
           </Link>
         ))}

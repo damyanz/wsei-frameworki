@@ -39,11 +39,7 @@ import {
   ColorSwatchIcon as ColorSwatchIconOutlined,
   OfficeBuildingIcon as OfficeBuildingIconOutlined,
 } from "@heroicons/react/outline";
-import { SVGProps } from "react";
-
-type IconsType = {
-  [x: string]: (props: SVGProps<SVGSVGElement>) => JSX.Element;
-};
+import { IconsType, IconNameType, IconTypeType } from "@/types/icons";
 
 const solidIcons: IconsType = {
   publications: NewspaperIcon,
@@ -88,8 +84,15 @@ const outlinedIcons: IconsType = {
   hashtag: HashtagIcon,
 };
 
-const Icon = ({ name, type = "solid", ...rest }: any) => {
+interface IconProps {
+  name: IconNameType;
+  type?: IconTypeType;
+  [x: string]: any;
+}
+
+const Icon = ({ name, type = "solid", ...rest }: IconProps) => {
   const IconElement = type === "solid" ? solidIcons[name] : outlinedIcons[name];
+  if (!IconElement) return <></>;
   return <IconElement {...rest} />;
 };
 

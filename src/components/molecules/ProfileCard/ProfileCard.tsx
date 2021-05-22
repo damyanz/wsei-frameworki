@@ -6,20 +6,21 @@ import OutlinedButton from "@components/atoms/OutlinedButton";
 import Icon from "@components/atoms/Icon";
 import EditableSpan from "@components/molecules/EditableSpan";
 import Loader from "@components/atoms/Loader";
+import { UserType, UserStateType } from "@/types/global";
 
 type ProfileCardProps = {
   type?: "small" | "extended";
 };
 
 export const ProfileCard = ({ type }: ProfileCardProps) => {
-  const userData = useAppSelector((state) => state.user);
-  const [profileData, setProfileData] = useState<any>();
+  const userData: UserStateType = useAppSelector((state) => state.user);
+  const [profileData, setProfileData] = useState<UserType>();
   const [editMode, setEditMode] = useState<boolean>(false);
   const { firstName, lastName, picture, email, phone, location } =
     profileData || {};
 
   useEffect(() => {
-    setProfileData(userData);
+    if (userData) setProfileData(userData);
   }, [userData]);
 
   if (!profileData) return <Loader className="w-10 h-10 m-10 mx-auto" />;

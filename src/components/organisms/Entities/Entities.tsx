@@ -9,13 +9,15 @@ import { filterByText } from "@helpers/common";
 import clsx from "clsx";
 import OptionsBar from "@components/molecules/OptionsBar";
 import Loader from "@components/atoms/Loader";
+import { Link } from "react-router-dom";
+import { PublicationType } from "@/types/global";
 
 const Entities = () => {
   const [viewType, setViewType] = useState<ViewType>("mosaic");
-  const [publications, setPublications] = useState<any[]>([]);
+  const [publications, setPublications] = useState<PublicationType[]>([]);
   const [searchPhrase, setSearchPhrase] = useState<string>("");
   const [loadingPublications, setLoadingPublications] = useState<boolean>(true);
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<string[]>([]);
   const [filterValue, setFilterValue] = useState<string>("followed");
   const [sortAscending, setSortAscending] = useState<boolean>(true);
   const [fullscreen, setFullscreen] = useState<boolean>(false);
@@ -42,7 +44,7 @@ const Entities = () => {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchPhrase(e.currentTarget.value);
-    const foundItems = filterByText(
+    const foundItems: string[] = filterByText(
       e.currentTarget.value,
       publications.map(({ text }) => text)
     );
@@ -115,7 +117,9 @@ const Entities = () => {
               return 0;
             })
             .map((entity) => (
-              <EntityCard key={`entity-${entity.id}`} entity={entity} />
+              <Link to={`/entity/${entity.id}`}>
+                <EntityCard key={`entity-${entity.id}`} entity={entity} />
+              </Link>
             ))}
         </div>
       </section>

@@ -6,6 +6,7 @@ import WorkspaceBanners from "@components/molecules/WorkspaceBanners";
 import { workspaces } from "@/constants";
 import ResumeYourWork from "@components/molecules/ResumeYourWork";
 import Loader from "@components/atoms/Loader";
+import { WorkspaceType, PublicationType } from "@/types/global";
 
 interface ParamTypes {
   slug: string | undefined;
@@ -13,8 +14,10 @@ interface ParamTypes {
 
 const Workspace = () => {
   const { slug } = useParams<ParamTypes>();
-  const workspaceData = workspaces.find((workspace) => workspace.slug === slug);
-  const [publications, setPublications] = useState<any>(null);
+  const workspaceData = workspaces.find(
+    (workspace) => workspace.slug === slug
+  ) as WorkspaceType;
+  const [publications, setPublications] = useState<PublicationType[]>([]);
 
   useEffect(() => {
     const getPosts = async () => {

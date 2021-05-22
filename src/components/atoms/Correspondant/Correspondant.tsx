@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import EditableSpan from "@components/molecules/EditableSpan";
 import IconLabel from "@components/atoms/IconLabel";
 
-const Correspondant = ({ picture, editable }: any) => {
+type CorrespondantType = {
+  picture?: string;
+  editable?: boolean;
+};
+
+const Correspondant = ({ picture, editable }: CorrespondantType) => {
   return (
     <div className="flex items-center w-full p-1.5 bg-gray-200">
       {picture ? (

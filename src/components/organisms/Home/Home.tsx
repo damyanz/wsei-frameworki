@@ -4,9 +4,10 @@ import LatestPublications from "@components/molecules/LatestPublications";
 import Workspaces from "@components/molecules/Workspaces";
 import ResumeYourWork from "@components/molecules/ResumeYourWork";
 import Loader from "@components/atoms/Loader";
+import { PublicationType } from "@/types/global";
 
 const Home = () => {
-  const [publications, setPublications] = useState<any>(null);
+  const [publications, setPublications] = useState<PublicationType[]>();
 
   useEffect(() => {
     const getPosts = async () => {
@@ -15,7 +16,7 @@ const Home = () => {
           headers: { "app-id": APP_ID },
           cache: "force-cache",
         });
-        const { data } = await res.json();
+        const { data }: { data: PublicationType[] } = await res.json();
         setPublications(data);
       } catch (err) {
         console.log(err);

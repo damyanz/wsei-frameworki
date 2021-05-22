@@ -1,4 +1,13 @@
-export const workspaces = [
+import {
+  WorkspaceType,
+  PlatformType,
+  BannerType,
+  FilterType,
+  SelectOptionType,
+  TableType,
+} from "@/types/global";
+
+export const workspaces: WorkspaceType[] = [
   {
     id: 0,
     label: "Client contract",
@@ -36,7 +45,7 @@ export const workspaces = [
   },
 ];
 
-export const platform = [
+export const platforms: PlatformType[] = [
   {
     label: "Home",
     icon: "home",
@@ -64,7 +73,7 @@ export const platform = [
   },
 ];
 
-export const bannersData = [
+export const bannersData: BannerType[] = [
   {
     id: "entities",
     icon: "office-building",
@@ -103,7 +112,7 @@ export const bannersData = [
   },
 ];
 
-export const filters = [
+export const filters: FilterType[] = [
   {
     label: "SAS",
     value: "sas",
@@ -142,7 +151,7 @@ export const filters = [
   },
 ];
 
-export const selectFilterOptions = [
+export const selectFilterOptions: SelectOptionType[] = [
   {
     value: "followed",
     label: "Followed",
@@ -155,7 +164,7 @@ export const selectFilterOptions = [
   },
 ];
 
-export const tableAData = {
+export const tableAData: TableType = {
   legend: ["Name", "Entity", "Location", "Expertise", "Date", "Firm"],
   records: [
     {
@@ -191,7 +200,7 @@ export const tableAData = {
   ],
 };
 
-export const tableBData = {
+export const tableBData: TableType = {
   legend: ["Name", "Entity", "Location", "Expertise", "Date"],
   records: [
     {

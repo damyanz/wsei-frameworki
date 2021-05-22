@@ -1,8 +1,13 @@
 import { useState } from "react";
 import Icon from "@components/atoms/Icon";
 import IconLabel from "@components/atoms/IconLabel";
+import { WorkspaceType } from "@/types/global";
 
-const WorkspaceCard = ({ workspace }: any) => {
+type WorkspaceCardProps = {
+  workspace: WorkspaceType;
+};
+
+const WorkspaceCard = ({ workspace }: WorkspaceCardProps) => {
   const { icon, label, picture } = workspace;
   const [pictureLoaded, setPictureLoaded] = useState<boolean>(false);
 

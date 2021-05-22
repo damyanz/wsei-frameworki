@@ -1,6 +1,11 @@
 import PersonLabel from "@components/atoms/PersonLabel";
+import { PublicationType } from "@/types/global";
 
-const PublicationThumb = ({ publication }: any) => {
+type PublicationThumbProps = {
+  publication: PublicationType;
+};
+
+const PublicationThumb = ({ publication }: PublicationThumbProps) => {
   return (
     <div className="relative flex items-center group hover:cursor-pointer">
       <div className="box-content absolute w-full h-full p-1 transition-opacity duration-100 transform -translate-x-1 rounded opacity-0 bg-gray-section group-hover:opacity-100"></div>

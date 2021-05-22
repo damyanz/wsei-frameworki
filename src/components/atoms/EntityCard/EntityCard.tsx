@@ -1,4 +1,10 @@
-const EntityCard = ({ entity }: any) => {
+import { PublicationType } from "@/types/global";
+
+type EntityCardProps = {
+  entity: PublicationType;
+};
+
+const EntityCard = ({ entity }: EntityCardProps) => {
   const { text, image } = entity;
   return (
     <div className="flex p-2 bg-white rounded shadow hover:shadow-md cursor-pointer hover:-translate-y-0.5 transition duration-300 transform">

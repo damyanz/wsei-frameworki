@@ -2,6 +2,7 @@ import { useAppDispatch } from "@redux/hooks";
 import { useEffect } from "react";
 import { APP_ID } from "@env";
 import { setUserData } from "@redux/slices/userSlice";
+import { UserType } from "@/types/global";
 
 const useUser = () => {
   const dispatch = useAppDispatch();
@@ -14,8 +15,7 @@ const useUser = () => {
             headers: { "app-id": APP_ID },
           }
         );
-
-        const user = await res.json();
+        const user: UserType = await res.json();
         dispatch(setUserData(user));
         return user;
       } catch (err) {

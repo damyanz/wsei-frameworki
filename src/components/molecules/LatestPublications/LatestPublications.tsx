@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import PublicationThumb from "@components/atoms/PublicationThumb";
 import PersonLabel from "@components/atoms/PersonLabel";
+import { PublicationType } from "@/types/global";
 
-type LatestPublicationsType = {
-  publications: any;
+type LatestPublicationsProps = {
+  publications: PublicationType[];
 };
 
 const LatestPublications = ({
   publications: _publications,
-}: LatestPublicationsType) => {
+}: LatestPublicationsProps) => {
   const publications = _publications
     .slice(0, 4)
     .sort(
-      (a: any, b: any) =>
+      (a, b) =>
         new Date(b.publishDate).getDate() - new Date(a.publishDate).getDate()
     );
 
@@ -57,7 +58,7 @@ const LatestPublications = ({
           Latest publications
         </h2>
         <div className="flex flex-col mt-2 space-y-2">
-          {rest?.map((publication: any) => (
+          {rest?.map((publication) => (
             <Link key={publication.id} to={`/publications/${publication.id}`}>
               <PublicationThumb publication={publication} />
             </Link>

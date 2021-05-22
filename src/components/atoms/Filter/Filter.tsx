@@ -1,5 +1,11 @@
 import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
+import { FilterType } from "@/types/global";
+
+interface FilterProps extends FilterType {
+  checked?: boolean;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+}
 
 const Filter = ({
   label,
@@ -8,7 +14,7 @@ const Filter = ({
   value,
   checked,
   onChange,
-}: any) => {
+}: FilterProps) => {
   return (
     <div
       className={clsx(

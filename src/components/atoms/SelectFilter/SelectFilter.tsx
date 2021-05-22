@@ -1,14 +1,27 @@
 import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
+import { SelectOptionType } from "@/types/global";
 
-const SelectFilter = ({ value, onChange, options, className }: any) => {
-  const selectedOption = options.find((option: any) => option.value === value);
+type SelectFilterProps = {
+  value: string;
+  options: SelectOptionType[];
+  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  className?: string;
+};
+
+const SelectFilter = ({
+  value,
+  onChange,
+  options,
+  className,
+}: SelectFilterProps) => {
+  const selectedOption = options.find((option) => option.value === value);
 
   return (
     <div className={clsx("flex items-center", className)}>
-      {selectedOption.icon && (
+      {selectedOption?.icon && (
         <Icon
-          name={selectedOption.icon}
+          name={selectedOption?.icon}
           type="outlined"
           className="w-6 h-6 mr-1 text-blue-800"
         />
@@ -18,7 +31,7 @@ const SelectFilter = ({ value, onChange, options, className }: any) => {
         value={value}
         className="relative text-blue-800 bg-transparent"
       >
-        {options.map((option: any) => (
+        {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>

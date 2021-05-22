@@ -39,7 +39,6 @@ const OptionsBar = ({
               { id: 0, value: "dummy", label: "All", icon: "user-group" },
             ]}
             onChange={handleSelect}
-            variant="alt"
             className="px-2 py-1 bg-blue-200 rounded shadow"
           />
           <Icon
@@ -149,7 +148,6 @@ const OptionsBar = ({
           value={filterValue}
           options={selectFilterOptions}
           onChange={handleSelect}
-          variant="alt"
           className="px-1 border border-blue-800 rounded"
         />
       </div>

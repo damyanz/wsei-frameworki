@@ -1,5 +1,14 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "@components/atoms/Input";
+
+type EditableSpanProps = {
+  children: React.ReactNode;
+  editable?: boolean;
+  className?: string;
+  name?: string;
+  onChange?: (value: string) => any;
+  multiple?: boolean;
+};
 
 const EditableSpan = ({
   children,
@@ -8,11 +17,11 @@ const EditableSpan = ({
   name,
   onChange,
   multiple,
-}: any) => {
+}: EditableSpanProps) => {
   const [savedValue, setSavedValue] = useState<string>("");
-  const [currentValue, setCurrentValue] = useState<string>(children);
+  const [currentValue, setCurrentValue] = useState<string>(children as string);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setCurrentValue(e.currentTarget.value);
     if (typeof onChange === "function") {
       onChange(e.currentTarget.value);

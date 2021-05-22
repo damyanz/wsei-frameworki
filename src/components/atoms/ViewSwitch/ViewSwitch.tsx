@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Icon from "@components/atoms/Icon";
 import clsx from "clsx";
+import { IconNameType } from "@/types/icons";
 
 export type ViewType = "mosaic" | "list";
 
-const Switch = ({ label, value, onClick, selected }: any) => {
+type SwitchProps = {
+  label: string;
+  value: IconNameType;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  selected?: boolean;
+};
+
+const Switch = ({ label, value, onClick, selected }: SwitchProps) => {
   return (
     <button
       value={value}
@@ -30,9 +38,17 @@ const Switch = ({ label, value, onClick, selected }: any) => {
   );
 };
 
-const ViewSwitch = ({ onTypeSelect, initialType = "mosaic" }: any) => {
+type ViewSwitchProps = {
+  onTypeSelect: (value: ViewType) => any;
+  initialType?: "mosaic" | "list";
+};
+
+const ViewSwitch = ({
+  onTypeSelect,
+  initialType = "mosaic",
+}: ViewSwitchProps) => {
   const [viewType, setViewType] = useState<ViewType>(initialType);
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const { value } = e.currentTarget;
     setViewType(value as ViewType);
     onTypeSelect(value as ViewType);

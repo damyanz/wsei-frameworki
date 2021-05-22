@@ -4,18 +4,32 @@ import IconLabel from "@components/atoms/IconLabel";
 import { filterByText } from "@helpers/common";
 import ProfileCard from "@components/molecules/ProfileCard";
 import clsx from "clsx";
-import { workspaces, platform } from "@/constants";
+import { workspaces, platforms } from "@/constants";
 import { Link } from "react-router-dom";
+import { WorkspaceType, PlatformType } from "@/types/global";
+
+enum GroupTypeEnum {
+  platform,
+  workspaces,
+}
+
+type MenuItemType = Omit<WorkspaceType, "id" | "picture"> | PlatformType;
+
+type MenuGroupType = {
+  title: string;
+  type: keyof typeof GroupTypeEnum;
+  items: MenuItemType[];
+};
 
 const DropdownMenu = () => {
   const [searchPhrase, setSearchPhrase] = useState<string>("");
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<MenuItemType[]>([]);
 
-  const menuGroups = [
+  const menuGroups: MenuGroupType[] = [
     {
       title: "Platform",
       type: "platform",
-      items: platform.map((platform) => ({
+      items: platforms.map((platform) => ({
         ...platform,
         iconClassName: "text-blue-icon",
       })),
@@ -32,7 +46,7 @@ const DropdownMenu = () => {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchPhrase(e.currentTarget.value);
-    const foundItems = filterByText(
+    const foundItems: MenuItemType[] = filterByText(
       e.currentTarget.value,
       menuGroups.flatMap(({ items }) => items),
       "label"
@@ -57,7 +71,7 @@ const DropdownMenu = () => {
                     filteredItems.map(({ label }) => label).includes(item.label)
                   )
                 : _items;
-            const basePaths: any = {
+            const basePaths: { [key in keyof typeof GroupTypeEnum]: string } = {
               platform: "",
               workspaces: "/workspace",
             };

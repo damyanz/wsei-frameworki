@@ -1,6 +1,11 @@
 import Icon from "@components/atoms/Icon";
+import { BannerType } from "@/types/global";
 
-const WorkspaceBanner = ({ icon, title, description }: any) => {
+const WorkspaceBanner = ({
+  icon,
+  title,
+  description,
+}: Pick<BannerType, "icon" | "title" | "description">) => {
   return (
     <div className="relative flex flex-col py-4 pl-3 pr-8 space-y-3 bg-white rounded shadow">
       <Icon
