@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-start justify-start w-4/5 pb-12 pl-10">
+    <main className="flex flex-col items-start justify-start w-full pb-12 md:pl-10">
       {publications ? (
         <LatestPublications publications={publications || []} />
       ) : (

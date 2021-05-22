@@ -4,7 +4,7 @@ import PanelInfo from "@components/molecules/PanelInfo";
 
 const Profile = () => {
   return (
-    <main className="flex flex-col items-start justify-start w-4/5 pl-10 ">
+    <main className="flex flex-col items-start justify-start w-full md:pl-10">
       <ProfileCard type="extended" />
       <About />
       <PanelInfo />

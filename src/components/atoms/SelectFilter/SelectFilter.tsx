@@ -29,7 +29,7 @@ const SelectFilter = ({
       <select
         onChange={onChange}
         value={value}
-        className="relative text-blue-800 bg-transparent"
+        className="relative text-blue-800 bg-transparent appearance-none"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>

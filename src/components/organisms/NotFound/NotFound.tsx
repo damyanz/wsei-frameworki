@@ -2,7 +2,7 @@ import IconLabel from "@components/atoms/IconLabel";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-4/5 pl-10">
+    <div className="flex flex-col items-center justify-center w-full pl-10">
       <IconLabel
         label="404"
         labelClassName="text-gray-700 text-6xl font-light"

@@ -53,7 +53,7 @@ const PanelInfo = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col py-5 border-b">
+      <div className="flex flex-col py-5 overflow-x-scroll border-b md:overflow-x-auto">
         <span className="mb-1.5 font-semibold">Proposals</span>
         <div
           className={clsx("flex flex-col max-w-3xl", {
@@ -67,7 +67,7 @@ const PanelInfo = () => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col py-5">
+      <div className="flex flex-col py-5 overflow-x-scroll md:overflow-x-auto ">
         <span className="mb-1.5 font-semibold">Internal reviews</span>
         <div
           className={clsx("flex flex-col max-w-3xl", {

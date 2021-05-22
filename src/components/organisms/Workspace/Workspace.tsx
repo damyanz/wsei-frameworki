@@ -35,7 +35,7 @@ const Workspace = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-start justify-start w-4/5 pl-10 space-y-4">
+    <main className="flex flex-col items-start justify-start w-full space-y-4 md:pl-10">
       <WorkspaceHeading workspace={workspaceData} className="w-full" />
       <WorkspaceBanners />
       {publications ? (

@@ -69,8 +69,8 @@ const ResumeYourWork = ({
 
   return (
     <section className="pt-2.5 w-full min-h-screen">
-      <div className="flex justify-between w-full">
-        <h2 className="pl-4 text-xl font-semibold">{label}</h2>
+      <div className="flex flex-col justify-between w-full overflow-x-scroll md:flex-row md:overflow-x-auto">
+        <h2 className="text-xl font-semibold md:pl-4">{label}</h2>
         <div className="flex items-center mb-2.5 space-x-8">
           <Input
             onChange={handleInput}
@@ -88,7 +88,7 @@ const ResumeYourWork = ({
         </div>
       </div>
       {withFilters && (
-        <div className="flex justify-start w-full mb-2 space-x-3">
+        <div className="flex items-center justify-start w-full mb-2 space-x-3 overflow-x-scroll md:overflow-x-auto">
           <Filter
             label="All"
             bgClassName="bg-white"

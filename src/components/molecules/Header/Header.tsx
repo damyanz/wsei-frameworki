@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-20 flex w-screen bg-white shadow-md">
-      <div className="relative flex items-center justify-between flex-1 max-w-screen-xl py-1 mx-auto">
-        <div className="flex items-center space-x-5">
-          <Link to="/">
+      <div className="relative flex items-center justify-between flex-1 max-w-screen-xl px-2 py-1 mx-auto md:px-0">
+        <div className="flex items-center md:space-x-5">
+          <Link className="hidden md:inline" to="/">
             <img src="/logo.png" alt="Company" className="h-8" />
           </Link>
           <Dropdown />
@@ -20,7 +20,7 @@ const Header = () => {
           className="flex flex-1 px-2 py-1.5 text-sm border rounded border-gray-light"
           icon="search"
           iconClassName="h-5 text-blue-icon transform -translate-y-1/2 right-1.5 top-1/2"
-          wrapperClassName="flex flex-1 max-w-lg"
+          wrapperClassName="hidden md:flex flex-1 max-w-lg"
         />
         <Cockpit />
       </div>

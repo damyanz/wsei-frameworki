@@ -58,7 +58,7 @@ const Entities = () => {
   return (
     <main
       className={clsx(
-        "flex flex-col items-start justify-start w-4/5 pl-10 space-y-4",
+        "flex flex-col items-start justify-start w-full md:pl-10 space-y-4",
         {
           "fixed top-0 left-0 w-full bg-gray-section z-50 pr-10 pt-10":
             fullscreen,
@@ -88,7 +88,7 @@ const Entities = () => {
         />
         <div
           className={clsx("grid grid-flow-row gap-y-3", {
-            "grid-cols-4 gap-x-2":
+            "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2":
               viewType === "mosaic" && !loadingPublications,
             "grid-cols-1": viewType === "list" || loadingPublications,
           })}

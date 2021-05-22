@@ -22,7 +22,7 @@ const Dropdown = () => {
   }, [pathname]);
 
   return (
-    <div className={clsx("relative w-52")}>
+    <div className="relative w-44 md:w-52">
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={() => {
@@ -40,7 +40,7 @@ const Dropdown = () => {
       {isOpen && (
         <div
           ref={ref}
-          className="absolute z-40 w-64 bg-white border-t rounded-b-sm rounded-tr-sm shadow-xl border-gray-light top-full"
+          className="absolute z-50 w-64 bg-white border-t rounded-b-sm rounded-tr-sm shadow-xl border-gray-light top-full"
         >
           <DropdownMenu />
         </div>

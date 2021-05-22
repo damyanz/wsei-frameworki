@@ -25,7 +25,7 @@ const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemProps) => {
         doloribus consequuntur debitis laboriosam animi perferendis repellendus
         consectetur placeat.
       </p>
-      <div className="flex space-x-2.5 items-center">
+      <div className="flex flex-wrap space-x-2.5 items-center">
         {tags?.length ? (
           <div className="flex space-x-2">
             {tags.map((tag) => {
@@ -54,10 +54,12 @@ const ResumeItem = ({ title, user, updatedAt, tags }: ResumeItemProps) => {
             />
           </>
         )}
-        <span>∙</span>
-        <span className="text-sm text-gray-400">
-          Updated {updateTime} by {user.firstName} {user.lastName}
-        </span>
+        <div className="flex w-full md:w-auto space-x-2.5 items-center">
+          <span>∙</span>
+          <span className="text-sm text-gray-400">
+            Updated {updateTime} by {user.firstName} {user.lastName}
+          </span>
+        </div>
       </div>
     </div>
   );

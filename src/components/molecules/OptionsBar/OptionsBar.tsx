@@ -30,8 +30,8 @@ const OptionsBar = ({
   const [filtersVisible, setFiltersVisible] = useState<boolean>(false);
 
   return (
-    <div className="flex items-center justify-between mb-3">
-      <div className="flex items-center">
+    <div className="flex flex-col items-start justify-between mb-3 space-y-2 md:space-y-0 md:items-center md:flex-row">
+      <div className="flex items-center w-full overflow-x-scroll md:w-auto md:overflow-x-auto">
         <div className="flex items-center">
           <SelectFilter
             value="dummy"
@@ -97,41 +97,43 @@ const OptionsBar = ({
             )}
           </button>
         </div>
-        <button
-          className="flex items-center pl-3 focus:outline-none"
-          onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            setUrlCopied(true);
-          }}
-        >
-          <IconLabel
-            label="Share"
-            labelClassName={clsx(
-              "text-sm ml-1 transition-colors duration-150",
-              {
+        {navigator.clipboard && (
+          <button
+            className="flex items-center pl-3 focus:outline-none"
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href);
+              setUrlCopied(true);
+            }}
+          >
+            <IconLabel
+              label="Share"
+              labelClassName={clsx(
+                "text-sm ml-1 transition-colors duration-150",
+                {
+                  "text-gray-icon": !urlCopied,
+                  "text-green-600": urlCopied,
+                }
+              )}
+              iconName="share"
+              iconType="outlined"
+              iconClassName={clsx("w-4 h-4 transition-colors duration-150", {
                 "text-gray-icon": !urlCopied,
                 "text-green-600": urlCopied,
-              }
-            )}
-            iconName="share"
-            iconType="outlined"
-            iconClassName={clsx("w-4 h-4 transition-colors duration-150", {
-              "text-gray-icon": !urlCopied,
-              "text-green-600": urlCopied,
-            })}
-          />
-          <Icon
-            name="check"
-            type="outlined"
-            className={clsx(
-              "h-4 ml-1 text-green-600 transition-all duration-150",
-              {
-                "w-0": !urlCopied,
-                "w-4": urlCopied,
-              }
-            )}
-          />
-        </button>
+              })}
+            />
+            <Icon
+              name="check"
+              type="outlined"
+              className={clsx(
+                "h-4 ml-1 text-green-600 transition-all duration-150",
+                {
+                  "w-0": !urlCopied,
+                  "w-4": urlCopied,
+                }
+              )}
+            />
+          </button>
+        )}
       </div>
       <div className="flex">
         <div className="pr-4 mr-4 border-r border-gray-icon-light">

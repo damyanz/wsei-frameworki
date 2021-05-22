@@ -4,7 +4,7 @@ import ProfileCard from "@components/molecules/ProfileCard";
 
 const Sidebar = () => {
   return (
-    <aside className="flex flex-col w-1/5 top-16">
+    <aside className="flex flex-col w-full md:w-1/5 top-16">
       <div className="sticky flex flex-col top-16">
         <ProfileCard />
         <div className="flex flex-col pl-4 mt-5 space-y-4">

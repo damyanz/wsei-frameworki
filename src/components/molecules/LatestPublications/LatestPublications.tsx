@@ -20,9 +20,9 @@ const LatestPublications = ({
   const [latestPublication, ...rest] = publications;
 
   return (
-    <div className="flex w-full space-x-5 overflow-hidden bg-white rounded shadow">
+    <div className="flex flex-col w-full overflow-hidden bg-white rounded shadow md:flex-row md:space-x-5">
       <Link
-        className="flex flex-1 flex-shrink-0 w-1/3"
+        className="flex flex-none flex-shrink-0 w-full h-40 md:h-auto md:flex-1 md:w-1/3"
         to={`/publications/${latestPublication.id}`}
       >
         <div className="relative flex w-full pl-3 overflow-hidden pb-7 group hover:cursor-pointer">
@@ -53,11 +53,11 @@ const LatestPublications = ({
           </div>
         </div>
       </Link>
-      <div className="flex flex-col w-2/3 pt-2 pb-3 pr-10">
+      <div className="flex flex-col w-full px-2 pt-2 pb-3 md:px-0 md:pr-10 md:w-2/3">
         <h2 className="text-xl font-semibold text-blue-icon">
           Latest publications
         </h2>
-        <div className="flex flex-col mt-2 space-y-2">
+        <div className="flex flex-col mt-2 space-y-3 md:space-y-2">
           {rest?.map((publication) => (
             <Link key={publication.id} to={`/publications/${publication.id}`}>
               <PublicationThumb publication={publication} />

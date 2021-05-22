@@ -26,9 +26,12 @@ const WorkspaceBanners = () => {
         </button>
       </div>
       <div
-        className={clsx("grid grid-cols-3 gap-x-3 pb-5", {
-          hidden: !open,
-        })}
+        className={clsx(
+          "grid grid-cols-1 space-y-3 md:space-y-0 md:grid-cols-3 gap-x-3 pb-5",
+          {
+            hidden: !open,
+          }
+        )}
       >
         {bannersData.map((bannerData) => (
           <Link key={`workspaceBanner-${bannerData.id}`} to={bannerData.link}>
