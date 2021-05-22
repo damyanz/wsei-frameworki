@@ -30,7 +30,7 @@ const OptionsBar = ({
   const [filtersVisible, setFiltersVisible] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-col items-start justify-between mb-3 space-y-2 md:space-y-0 md:items-center md:flex-row">
+    <div className="relative flex flex-col items-start justify-between mb-3 space-y-2 md:space-y-0 md:items-center md:flex-row">
       <div className="flex items-center w-full overflow-x-scroll md:w-auto md:overflow-x-auto">
         <div className="flex items-center">
           <SelectFilter
@@ -77,7 +77,6 @@ const OptionsBar = ({
                 iconClassName="h-4 w-4 text-gray-icon"
               />
             </button>
-            {filtersVisible && <Filters />}
           </div>
         </div>
         <div className="flex items-center px-3 border-r border-gray-icon-light">
@@ -153,6 +152,7 @@ const OptionsBar = ({
           className="px-1 border border-blue-800 rounded"
         />
       </div>
+      {filtersVisible && <Filters />}
     </div>
   );
 };
