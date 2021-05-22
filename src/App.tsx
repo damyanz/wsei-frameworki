@@ -40,7 +40,8 @@ function App() {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route component={NotFound} />
+            <Route path="/404" component={NotFound} />
+            <Redirect to="/404" />
           </Switch>
         </div>
       </div>

@@ -58,7 +58,7 @@ const DropdownMenu = () => {
                   )
                 : _items;
             const basePaths: any = {
-              platform: "/test",
+              platform: "",
               workspaces: "/workspace",
             };
             if (items.length === 0) return null;
