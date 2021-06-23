@@ -4,13 +4,15 @@ import { APP_ID } from "@env";
 import { setUserData } from "@redux/slices/userSlice";
 import { UserType } from "@/types/global";
 
+const USER_ID = "60d0fe4f5311236168a109d1";
+
 const useUser = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     const getUserData = async () => {
       try {
         const res = await fetch(
-          `https://dummyapi.io/data/api/user/uABrZcuHGJnanoxlt53c`,
+          `https://dummyapi.io/data/api/user/${USER_ID}`,
           {
             headers: { "app-id": APP_ID },
           }
