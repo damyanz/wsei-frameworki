@@ -4,7 +4,7 @@ import { APP_ID } from "@env";
 import { setUserData } from "@redux/slices/userSlice";
 import { UserType } from "@/types/global";
 
-const USER_ID = "60d0fe4f5311236168a109d1";
+const USER_ID = "60d0fe4f5311236168a109ca";
 
 const useUser = () => {
   const dispatch = useAppDispatch();
